@@ -1,0 +1,44 @@
+{
+  "name": "tours",
+  "version": "1.0.0",
+  "description": "Tours module for Winter Is Coming",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/server.js",
+    "devbuild": "webpack --config webpack.config.js --watch",
+    "devstart": "nodemon server/server.js --watch server --watch client/public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HRR49HouseStark/tours.git"
+  },
+  "author": "Michael Chen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HRR49HouseStark/tours/issues"
+  },
+  "homepage": "https://github.com/HRR49HouseStark/tours#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.5",
+    "babel-loader": "^8.2.1",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^4.2.0"
+  }
+}
