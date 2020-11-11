@@ -21,5 +21,4 @@ module.exports = {
     path: path.resolve(__dirname, 'client/public'),
   },
   resolve: { extensions: ['.js', '.jsx'] },
-  // watch: true,
 };
