@@ -41,4 +41,5 @@ const insert = (user, res) => {
 module.exports = {
   getAll,
   insert,
+  User,
 };

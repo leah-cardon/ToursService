@@ -16,6 +16,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // req.body should include {name, number, email, type, date, time, call}
 // Inserts a user's tour request to the database
-app.post('/database', (req, res) => db.insert(req.body, res));
+app.post('/api/tours', (req, res) => db.insert(req.body, res));
 
 app.listen(port, () => console.log(`Tours module is listening at http://localhost:${port}`));
