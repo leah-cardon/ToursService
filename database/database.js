@@ -17,29 +17,22 @@ const userSchema = new mongoose.Schema({
   call: Boolean,
 });
 
+// Later, refactor to add agent photo!
+const agentSchema = new mongoose.Schema({
+  name: String,
+  title: String,
+  number: String,
+  stars: Number,
+  reviews: Number,
+  sales: Number,
+  photo: String,
+});
+
 const User = mongoose.model('User', userSchema);
-
-const getAll = () => User.find();
-
-// Inserts user into database if not already there.
-const insert = (user, res) => {
-  User.findOne({ name: user.name })
-    .then((existingUser) => {
-      if (!existingUser) {
-        console.log(`Inserted ${user.name} into the database!`);
-        return User.create(user)
-          .then(() => res.sendStatus(200));
-      }
-      throw (new Error('User exists!'));
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send(`${err}`);
-    });
-};
+const Agent = mongoose.model('Agent', agentSchema);
 
 module.exports = {
-  getAll,
-  insert,
   User,
+  Agent,
+  connection: db,
 };
