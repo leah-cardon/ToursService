@@ -4,10 +4,12 @@
   "description": "Tours module for Winter Is Coming",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --verbose",
+    "testCoverage": "jest --collectCoverage",
     "start": "node server/server.js",
     "devbuild": "webpack --config webpack.config.js --watch",
-    "devstart": "nodemon server/server.js --watch server --watch client/public"
+    "devstart": "nodemon server/server.js --watch server --watch client/public",
+    "seed": "node database/runSeed.js"
   },
   "repository": {
     "type": "git",
@@ -23,24 +25,40 @@
     "axios": "^0.21.0",
     "bluebird": "^3.7.2",
     "body-parser": "^1.19.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
     "express": "^4.17.1",
+    "faker": "^5.1.0",
     "mongoose": "^5.10.13",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "regenerator-runtime": "^0.13.7"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
     "@babel/preset-env": "^7.12.1",
     "@babel/preset-react": "^7.12.5",
+    "babel-jest": "^26.6.3",
     "babel-loader": "^8.2.1",
     "eslint": "^7.13.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
+    "eslint-plugin-enzyme": "^0.2.0",
     "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jest": "^24.1.0",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
+    "jest": "^26.6.3",
+    "puppeteer": "^5.4.1",
+    "supertest": "^6.0.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^4.2.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/env",
+      "@babel/react"
+    ]
   }
 }

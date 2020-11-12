@@ -8,7 +8,7 @@ const App = () => {
   }, []);
 
   return (
-    <div>
+    <div className="testApp">
       Hello World:
       {count}
     </div>
