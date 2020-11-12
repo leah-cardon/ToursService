@@ -7,6 +7,7 @@ const createFakeUsers = () => {
   const types = ['in-person', 'video'];
   const calls = [true, false];
 
+  // insert 7 into future() ?
   for (let i = 0; i < 100; i += 1) {
     const date = new Date(faker.date.future());
 

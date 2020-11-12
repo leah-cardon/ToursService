@@ -4,8 +4,19 @@ const app = require('../server/app.js');
 
 const request = supertest(app);
 
-// Note: supertest(app) allows us to call RESTful methods on our API routes
-// so request.get('/') will return the HTML response to the request!
+/*
+SOME JEST NOTES:
+
+To remove console.logs: jest --silent
+
+For pretty clgs:
+const colors = require('colors');
+process.stdout.write(colors.blue(message));
+
+SUPERTEST NOTE: supertest(app) allows us to call RESTful methods on our API routes
+so request.get('/') will return the HTML response to the request!
+
+*/
 
 // Runs ONCE before ANY tests in this file - NOT before EACH test!
 beforeAll(async (done) => {
