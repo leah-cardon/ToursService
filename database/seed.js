@@ -1,4 +1,5 @@
 const faker = require('faker');
+const mongoose = require('mongoose');
 const db = require('./models.js');
 
 const types = ['in-person', 'video'];
@@ -42,4 +43,4 @@ for (let i = 0; i < 4; i += 1) {
 
 db.seedUsers(users)
   .then(() => db.seedAgents(agents))
-  .then(() => db.connection.close());
+  .then(() => mongoose.disconnect());

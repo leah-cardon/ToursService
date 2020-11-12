@@ -34,5 +34,4 @@ const Agent = mongoose.model('Agent', agentSchema);
 module.exports = {
   User,
   Agent,
-  connection: db,
 };

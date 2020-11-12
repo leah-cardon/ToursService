@@ -45,5 +45,4 @@ module.exports = {
   insertUser,
   seedUsers,
   seedAgents,
-  connection: db.connection,
 };
