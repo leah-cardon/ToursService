@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "testCoverage": "jest --collectCoverage",
     "start": "node server/server.js",
     "devbuild": "webpack --config webpack.config.js --watch",
     "devstart": "nodemon server/server.js --watch server --watch client/public",
