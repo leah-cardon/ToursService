@@ -28,7 +28,7 @@ const createFakeUsers = () => {
 const createFakeAgents = () => {
   const agents = [];
   const titles = ['Listing', 'Premier'];
-  for (let i = 0; i < 4; i += 1) {
+  for (let i = 0; i < 100; i += 1) {
     const fakeAgent = {
       name: faker.name.findName(),
       title: titles[Math.floor(Math.random() * titles.length)],
