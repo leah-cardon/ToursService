@@ -4,7 +4,7 @@
   "description": "Tours module for Winter Is Coming",
   "main": "index.js",
   "scripts": {
-    "test": "jest --verbose",
+    "test": "jest --detectOpenHandles",
     "testCoverage": "jest --collectCoverage",
     "start": "node server/server.js",
     "devbuild": "webpack --config webpack.config.js --watch",
