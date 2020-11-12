@@ -1,12 +1,9 @@
 const express = require('express');
+const path = require('path');
+const bodyParser = require('body-parser');
+const db = require('../database/models.js');
 
 const app = express();
-
-const path = require('path');
-
-const bodyParser = require('body-parser');
-
-const db = require('../database/models.js');
 
 app.use(express.static(path.join(__dirname, '/../client/public')));
 app.use(bodyParser.json());

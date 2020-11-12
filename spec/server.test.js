@@ -4,6 +4,10 @@ const app = require('../server/app.js');
 
 const request = supertest(app);
 
+// Note: supertest(app) allows us to call RESTful methods on our API routes
+// so request.get('/') will return the HTML response to the request!
+
+// Runs ONCE before ANY tests in this file - NOT before EACH test!
 beforeAll(async (done) => {
   // disconnect from the real database first!
   await mongoose.disconnect();
@@ -15,17 +19,14 @@ beforeAll(async (done) => {
 });
 
 describe('Test root path', () => {
-  it('should respond to GET method', async (done) => request.get('/')
-    .then((response) => {
-      expect(response.statusCode).toBe(200);
-      done();
-    })
-    .catch((err) => {
-      console.err(err);
-      done();
-    }));
+  it('should respond to GET method', async (done) => {
+    const response = await request.get('/');
+    expect(response.statusCode).toBe(200);
+    done();
+  });
 });
 
+// Runs after all tests in this file have finished!
 afterAll((done) => {
   mongoose.disconnect();
   done();
