@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
+// mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -30,6 +30,16 @@ const agentSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 const Agent = mongoose.model('Agent', agentSchema);
+
+const getConnection = async () => {
+  try {
+    await mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
+  } catch (err) {
+    console.error('Connection to DB Failed');
+  }
+};
+
+getConnection().then(() => console.log('Connection to DB Successful')).catch((err) => console.error(err));
 
 module.exports = {
   User,
