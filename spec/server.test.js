@@ -27,6 +27,7 @@ beforeAll(async (done) => {
   const db = mongoose.connection;
   db.on('error', (err) => done.fail(err));
   db.once('open', () => done());
+  done();
 });
 
 describe('Test root path', () => {
@@ -38,7 +39,7 @@ describe('Test root path', () => {
 });
 
 // Runs after all tests in this file have finished!
-afterAll((done) => {
-  mongoose.disconnect();
+afterAll(async (done) => {
+  await mongoose.disconnect();
   done();
 });

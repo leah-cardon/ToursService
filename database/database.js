@@ -1,11 +1,5 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
-
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', () => console.log('Connected to tourDatabase!'));
-
 // type = in-person/video toggle. call = checkbox for financing call.
 const userSchema = new mongoose.Schema({
   name: String,
@@ -30,6 +24,19 @@ const agentSchema = new mongoose.Schema({
 
 const User = mongoose.model('User', userSchema);
 const Agent = mongoose.model('Agent', agentSchema);
+
+const getConnection = async () => {
+  try {
+    await mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
+  } catch (err) {
+    console.error('Connection to DB Failed');
+  }
+};
+
+// Open the connection.
+getConnection()
+  .then(() => console.log('Connected to toursDB!'))
+  .catch((err) => console.error(err));
 
 module.exports = {
   User,
