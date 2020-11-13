@@ -9,6 +9,7 @@ const userSchema = new mongoose.Schema({
   date: String,
   time: String,
   call: Boolean,
+  agent: String,
 });
 
 // Later, refactor to add agent photo!

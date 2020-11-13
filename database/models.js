@@ -31,11 +31,11 @@ const getAgents = (res) => Agent.find()
 // --------------- Seeding Scripts --------------- //
 const seedUsers = (users) => User.deleteMany({})
   .then(() => User.insertMany(users))
-  .catch((err) => console.err(err));
+  .catch((err) => console.error(err));
 
 const seedAgents = (agents) => Agent.deleteMany({})
   .then(() => Agent.insertMany(agents))
-  .catch((err) => console.err(err));
+  .catch((err) => console.error(err));
 
 module.exports = {
   getUsers,

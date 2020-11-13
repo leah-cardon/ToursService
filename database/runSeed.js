@@ -6,8 +6,8 @@ const seed = require('./seed.js');
 // Run this file to insert 100 random booking requests into the database.
 // NOTE: This will flush all database info first prior to running.
 
-const users = seed.createFakeUsers();
 const agents = seed.createFakeAgents();
+const users = seed.createFakeUsers(agents);
 
 db.seedUsers(users)
   .then(() => db.seedAgents(agents))
