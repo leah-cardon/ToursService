@@ -23,10 +23,10 @@ beforeAll(async (done) => {
   // disconnect from the real database first!
   await mongoose.disconnect();
 
-  // mongoose.connect('mongodb://localhost/tourDbTest', { useNewUrlParser: true, useUnifiedTopology: true });
-  // const db = mongoose.connection;
-  // db.on('error', (err) => done.fail(err));
-  // db.once('open', () => done());
+  mongoose.connect('mongodb://localhost/tourDbTest', { useNewUrlParser: true, useUnifiedTopology: true });
+  const db = mongoose.connection;
+  db.on('error', (err) => done.fail(err));
+  db.once('open', () => done());
   done();
 });
 
