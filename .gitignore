@@ -18,4 +18,4 @@ coverage
 .grunt
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
-public/bundle.js
+client/public/bundle.js
