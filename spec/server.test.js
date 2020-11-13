@@ -39,7 +39,7 @@ describe('Test root path', () => {
 });
 
 // Runs after all tests in this file have finished!
-afterAll((done) => {
-  mongoose.disconnect();
+afterAll(async (done) => {
+  await mongoose.disconnect();
   done();
 });
