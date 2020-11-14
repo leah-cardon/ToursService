@@ -4,7 +4,8 @@ import RequestModule from './RequestModule/RequestModule';
 import TourModule from './TourModule/TourModule';
 
 /*
-
+TODO:
+Styling is DONE in this component.
 */
 
 const App = () => {
@@ -37,25 +38,36 @@ const App = () => {
   //   // SCHEDULE ONLY: in-person/video chat, date, time
   // };
 
+  const inPerson = tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
+  const reqInfo = !tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
+
   return (
     <div className="testApp">
 
       <div id="tourInfoContainer">
-        <button id="toggleTour" onClick={() => toggleTour(true)} type="button">
-          Schedule A Tour
-        </button>
+        <div className="tourGrid">
+          <button className={inPerson} onClick={() => toggleTour(true)} type="button">
+            Schedule A Tour
+          </button>
 
-        <button id="toggleRequest" onClick={() => toggleTour(false)} type="button">
-          Request Info
-        </button>
+        </div>
+        <div className="tourGrid">
+          <button className={reqInfo} onClick={() => toggleTour(false)} type="button">
+            Request Info
+          </button>
+
+        </div>
       </div>
 
-      {
-        tour ? (
-          <TourModule financeCall={financeCall} setCall={setCall} requests={requests} />
-        )
-          : (<RequestModule financeCall={financeCall} setCall={setCall} agents={agents} />)
-      }
+      <div id="moduleContainer">
+        {
+          tour ? (
+            <TourModule financeCall={financeCall} setCall={setCall} requests={requests} />
+          )
+            : (<RequestModule financeCall={financeCall} setCall={setCall} agents={agents} />)
+        }
+
+      </div>
 
     </div>
   );

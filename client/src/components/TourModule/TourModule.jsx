@@ -28,7 +28,7 @@ const TourModule = ({ financeCall, setCall, requests }) => {
   return (
     <div>
       <TourType digital={digital} setDigital={setDigital} />
-      <Calendar setDate={setDate} />
+      <Calendar currentDate={currentDate} setDate={setDate} />
       <TimeDropdown occupied={requests} currentDate={currentDate} />
       <RequestForm tour financeCall={financeCall} setCall={setCall} />
       <Disclaimer name="Schedule A Tour" />

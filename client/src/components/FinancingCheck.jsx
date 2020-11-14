@@ -13,15 +13,9 @@ const FinancingCheck = ({ financeCall, setCall }) => {
   const noCall = (<p>I want to talk about financing</p>);
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      onClick={toggle}
-      onKeyDown={toggle}
-    >
-      <div id="checkbox">CHECKBOX</div>
-      <div id="financeMessage">{financeCall ? yesCall : noCall}</div>
-
+    <div id="financeBox">
+      <input id="finBox" type="checkbox" onChange={toggle} />
+      <label htmlFor="finBox" id="financeMessage">{financeCall ? yesCall : noCall}</label>
     </div>
   );
 };

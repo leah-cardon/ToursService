@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// Edit to format name, title, number, stars, reviews, recentSales
+// Edit to add name, title, number, stars, reviews, sales, photo
 const Agent = ({ agent }) => (
   <div>
     {agent.name}
