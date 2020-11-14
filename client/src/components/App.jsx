@@ -1,29 +1,33 @@
 import React, { useState, useEffect } from 'react';
-import RequestModule from './RequestModule';
-import TourModule from './TourModule';
+import axios from 'axios';
+import RequestModule from './RequestModule/RequestModule';
+import TourModule from './TourModule/TourModule';
 
 /*
-We'll need a few modules which conditionally render.
-Schedule a Tour
-Request Info
-flexbox side by side
-On-click, sets state to show whichever
-
-Both contain:
-Name phone email financing checkbox
-
-CURRENTLY WORKING ON:
-Need to finish skeletoning out the Schedule A Tour stuff - calendar mostly.
 
 */
 
 const App = () => {
-  const [count, setCount] = useState(0); // temporary!
-  const [financeCall, setCall] = useState(false);
+  // State for API stuff
+  const [requests, setRequests] = useState([]);
+  const [agents, setAgents] = useState([]);
+
+  // State for user inputs
   const [tour, toggleTour] = useState(true);
+  const [financeCall, setCall] = useState(false);
+
+  const getData = () => axios.get('/api/tours/requests')
+    .then((response) => {
+      setRequests(response.data);
+      return axios.get('/api/tours/agents');
+    })
+    .then((response) => setAgents(response.data))
+    .catch((err) => console.log(err));
 
   useEffect(() => {
-    setCount(0);
+    // API call which uses setRequests to grab requests
+    // should we watch any state vars?
+    getData();
   }, []);
 
   // const submit = (args) => {
@@ -37,7 +41,7 @@ const App = () => {
     <div className="testApp">
 
       <div id="tourInfoContainer">
-        <button id={`${count}`} onClick={() => toggleTour(true)} type="button">
+        <button id="toggleTour" onClick={() => toggleTour(true)} type="button">
           Schedule A Tour
         </button>
 
@@ -47,8 +51,10 @@ const App = () => {
       </div>
 
       {
-        tour ? (<TourModule financeCall={financeCall} setCall={setCall} />)
-          : (<RequestModule financeCall={financeCall} setCall={setCall} />)
+        tour ? (
+          <TourModule financeCall={financeCall} setCall={setCall} requests={requests} />
+        )
+          : (<RequestModule financeCall={financeCall} setCall={setCall} agents={agents} />)
       }
 
     </div>
