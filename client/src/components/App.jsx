@@ -15,7 +15,7 @@ const App = () => {
 
   // State for user inputs
   const [tour, toggleTour] = useState(true);
-  const [financeCall, setCall] = useState(false);
+  const [fCall, setCall] = useState(false);
 
   const getData = () => axios.get('/api/tours/requests')
     .then((response) => {
@@ -26,23 +26,22 @@ const App = () => {
     .catch((err) => console.log(err));
 
   useEffect(() => {
-    // API call which uses setRequests to grab requests
-    // should we watch any state vars?
     getData();
   }, []);
 
-  // const submit = (args) => {
-  //   // REQUIRED PARAMS: name, phone, email
-  //   //  financing call(boolean)
-  //   // REQUEST ONLY: which agent
-  //   // SCHEDULE ONLY: in-person/video chat, date, time
-  // };
+  const submit = (form) => {
+    const toSend = { call: fCall, ...form };
+    axios.post('/api/tours/users', toSend)
+      .then(() => console.log(`Sent ${form.name}'s request to the database!`))
+      .then(() => getData())
+      .catch((err) => console.log(err));
+  };
 
   const inPerson = tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
   const reqInfo = !tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
 
   return (
-    <div className="testApp">
+    <div className="appContainer">
 
       <div id="tourInfoContainer">
         <div className="tourGrid">
@@ -62,9 +61,9 @@ const App = () => {
       <div id="moduleContainer">
         {
           tour ? (
-            <TourModule financeCall={financeCall} setCall={setCall} requests={requests} />
+            <TourModule submit={submit} call={fCall} setCall={setCall} requests={requests} />
           )
-            : (<RequestModule financeCall={financeCall} setCall={setCall} agents={agents} />)
+            : (<RequestModule submit={submit} call={fCall} setCall={setCall} agents={agents} />)
         }
 
       </div>
