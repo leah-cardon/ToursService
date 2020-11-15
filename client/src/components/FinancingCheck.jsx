@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 /*
 TODO:
 FINISH CHECKBOX
+Styling.
 */
 
 const FinancingCheck = ({ call, setCall }) => {

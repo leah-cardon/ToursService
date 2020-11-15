@@ -1,4 +1,3 @@
-/* eslint-disable global-require */
 const mongoose = require('mongoose');
 const models = require('../database/models.js');
 const seed = require('../database/seed.js');

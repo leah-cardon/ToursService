@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
@@ -7,8 +6,7 @@ import FinancingCheck from './FinancingCheck';
 /*
 TODO:
 Need property name from whoever's module that is.
-Need to write API submit logic.
-
+Styling.
 */
 
 const RequestForm = ({
@@ -18,19 +16,15 @@ const RequestForm = ({
     name: '', number: '', email: '', message: '',
   });
 
-  // When we have list of properties, we'll pass that prop in here.
   useEffect(() => {
-    setForm((state) => ({ ...state, message: 'I am interested in property' }));
+    setForm((state) => ({ ...state, message: 'I am interested in this property!' }));
   }, []);
 
   const onChange = (e) => setForm((state) => ({ ...state, [e.target.name]: e.target.value }));
 
-  // Finish this!
   const handleSubmit = (e) => {
     e.preventDefault();
-    const toSubmit = { ...form };
-    tour ? delete toSubmit.message : null;
-    submit(toSubmit);
+    submit(form);
   };
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';

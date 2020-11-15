@@ -3,24 +3,9 @@ import PropTypes from 'prop-types';
 
 import Disclaimer from '../Disclaimer';
 import RequestForm from '../RequestForm';
-
 import TourType from './TourType';
 import Calendar from './Calendar';
 import TimeDropdown from './TimeDropdown';
-
-/*
-name: String,
-number: String,
-email: String,
-type: String,
-date: String,
-time: String,
-call: Boolean,
-agent: String,
-
-reqForm: {name, number, email, message, call, agent}
-tourForm: {name, number, email, type, date, time, call}
-*/
 
 const TourModule = ({
   submit, call, setCall, requests,
@@ -30,7 +15,10 @@ const TourModule = ({
   const [time, setTime] = useState('');
 
   const handleSubmit = (form) => {
-    const toSend = { time, digital, ...form };
+    const toSend = {
+      date: currentDate, time, type: digital, ...form,
+    };
+    delete toSend.message;
     submit(toSend);
   };
 

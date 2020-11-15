@@ -5,11 +5,10 @@ import FinancingCheck from '../FinancingCheck';
 import Disclaimer from '../Disclaimer';
 import RequestForm from '../RequestForm';
 import AgentList from './AgentList';
-/*
-Needed in state:
-financeCall (bool, initialize as false)
 
-Disclaimer only needs us to pass in name of module
+/*
+TODO:
+all styling
 
 */
 

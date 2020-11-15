@@ -16,7 +16,6 @@ describe('App Test Suite', () => {
     let found = false;
 
     divs.forEach((div) => {
-      // eslint-disable-next-line no-unused-expressions
       div.prop('className') === 'appContainer' ? found = true : null;
     });
 

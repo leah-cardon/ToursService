@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,7 +8,7 @@ const CalendarArrows = ({ direction, setDirection, arrowDir }) => {
   const toRender = arrowDir === 'right' ? right : left;
   const changeTo = arrowDir === 'right' ? 'left' : 'right';
 
-  // Add appropriate styles based on which arrow is rendering.
+  // Adds appropriate styles based on which arrow is rendering.
   let style = arrowDir === 'right' ? 'calRight' : 'calLeft';
   arrowDir !== direction ? style += ' hideArrow' : style += ' showArrow';
 

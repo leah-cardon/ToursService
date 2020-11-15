@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+
+import { getData, submitForm } from '../utils/Logic';
+
+import TourRequest from './TourRequest';
 import RequestModule from './RequestModule/RequestModule';
 import TourModule from './TourModule/TourModule';
 
-/*
-TODO:
-Styling is DONE in this component.
-*/
-
 const App = () => {
-  // State for API stuff
+  // State for API calls
   const [requests, setRequests] = useState([]);
   const [agents, setAgents] = useState([]);
 
@@ -17,55 +15,21 @@ const App = () => {
   const [tour, toggleTour] = useState(true);
   const [call, setCall] = useState(false);
 
-  const getData = () => axios.get('/api/tours/requests')
-    .then((response) => {
-      setRequests(response.data);
-      return axios.get('/api/tours/agents');
-    })
-    .then((response) => setAgents(response.data))
-    .catch((err) => console.log(err));
-
   useEffect(() => {
-    getData();
+    getData(setRequests, setAgents);
   }, []);
 
   const submit = (form) => {
-    const toSend = { call, ...form };
-    axios.post('/api/tours/users', toSend)
-      .then(() => console.log(`Sent ${form.name}'s request to the database!`))
-      .then(() => getData())
-      .catch((err) => console.log(err));
+    submitForm({ call, ...form }).then(() => getData(setRequests, setAgents));
   };
-
-  const inPerson = tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
-  const reqInfo = !tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
 
   return (
     <div className="appContainer">
-
-      <div id="tourInfoContainer">
-        <div className="tourGrid">
-          <button className={inPerson} onClick={() => toggleTour(true)} type="button">
-            Schedule A Tour
-          </button>
-
-        </div>
-        <div className="tourGrid">
-          <button className={reqInfo} onClick={() => toggleTour(false)} type="button">
-            Request Info
-          </button>
-
-        </div>
-      </div>
+      <TourRequest tour={tour} toggleTour={toggleTour} />
 
       <div id="moduleContainer">
-        {
-          tour ? (
-            <TourModule submit={submit} call={call} setCall={setCall} requests={requests} />
-          )
-            : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)
-        }
-
+        {tour ? (<TourModule submit={submit} call={call} setCall={setCall} requests={requests} />)
+          : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)}
       </div>
 
     </div>
