@@ -30,7 +30,7 @@ const getFreeSlots = (occupied = [], currentDate = '') => {
   return result;
 };
 
-const TimeDropdown = ({ occupied, currentDate }) => {
+const TimeDropdown = ({ occupied, currentDate, setTime }) => {
   const [available, setAvailable] = useState([]);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const TimeDropdown = ({ occupied, currentDate }) => {
   }, [currentDate]);
 
   return (
-    <select>
+    <select onChange={(e) => setTime(e.target.value)}>
       <option value="">Choose a Time</option>
       {available.map((slot) => (<option value={slot}>{slot}</option>))}
     </select>
@@ -48,6 +48,7 @@ const TimeDropdown = ({ occupied, currentDate }) => {
 TimeDropdown.propTypes = {
   occupied: PropTypes.shape([]).isRequired,
   currentDate: PropTypes.string.isRequired,
+  setTime: PropTypes.func.isRequired,
 };
 
 export default TimeDropdown;

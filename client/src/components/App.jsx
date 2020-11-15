@@ -15,7 +15,7 @@ const App = () => {
 
   // State for user inputs
   const [tour, toggleTour] = useState(true);
-  const [fCall, setCall] = useState(false);
+  const [call, setCall] = useState(false);
 
   const getData = () => axios.get('/api/tours/requests')
     .then((response) => {
@@ -30,7 +30,7 @@ const App = () => {
   }, []);
 
   const submit = (form) => {
-    const toSend = { call: fCall, ...form };
+    const toSend = { call, ...form };
     axios.post('/api/tours/users', toSend)
       .then(() => console.log(`Sent ${form.name}'s request to the database!`))
       .then(() => getData())
@@ -61,9 +61,9 @@ const App = () => {
       <div id="moduleContainer">
         {
           tour ? (
-            <TourModule submit={submit} call={fCall} setCall={setCall} requests={requests} />
+            <TourModule submit={submit} call={call} setCall={setCall} requests={requests} />
           )
-            : (<RequestModule submit={submit} call={fCall} setCall={setCall} agents={agents} />)
+            : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)
         }
 
       </div>

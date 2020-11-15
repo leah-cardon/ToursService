@@ -9,34 +9,44 @@ import Calendar from './Calendar';
 import TimeDropdown from './TimeDropdown';
 
 /*
-Needed props:
-financeCall (bool, initialize as false)
-setCall
+name: String,
+number: String,
+email: String,
+type: String,
+date: String,
+time: String,
+call: Boolean,
+agent: String,
 
-requests
-
-Disclaimer only needs us to pass in name of module
-
-have a handleSubmit here which passes info up the chain!
-
+reqForm: {name, number, email, message, call, agent}
+tourForm: {name, number, email, type, date, time, call}
 */
 
-const TourModule = ({ call, setCall, requests }) => {
+const TourModule = ({
+  submit, call, setCall, requests,
+}) => {
   const [currentDate, setDate] = useState('');
   const [digital, setDigital] = useState(false);
+  const [time, setTime] = useState('');
+
+  const handleSubmit = (form) => {
+    const toSend = { time, digital, ...form };
+    submit(toSend);
+  };
 
   return (
     <div>
       <TourType digital={digital} setDigital={setDigital} />
       <Calendar currentDate={currentDate} setDate={setDate} />
-      <TimeDropdown occupied={requests} currentDate={currentDate} />
-      <RequestForm tour call={call} setCall={setCall} />
+      <TimeDropdown occupied={requests} currentDate={currentDate} setTime={setTime} />
+      <RequestForm tour call={call} setCall={setCall} submit={handleSubmit} />
       <Disclaimer name="Schedule A Tour" />
     </div>
   );
 };
 
 TourModule.propTypes = {
+  submit: PropTypes.func.isRequired,
   call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
   requests: PropTypes.shape([]).isRequired,

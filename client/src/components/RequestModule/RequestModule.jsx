@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import FinancingCheck from '../FinancingCheck';
@@ -13,16 +13,28 @@ Disclaimer only needs us to pass in name of module
 
 */
 
-const RequestModule = ({ call, setCall, agents }) => (
-  <div>
-    <RequestForm />
-    <FinancingCheck call={call} setCall={setCall} />
-    <Disclaimer name="Request Info" />
-    <AgentList agents={agents} />
-  </div>
-);
+const RequestModule = ({
+  submit, call, setCall, agents,
+}) => {
+  const [agent, setAgent] = useState('');
+
+  const handleSubmit = (form) => {
+    const toSend = { agent, ...form };
+    submit(toSend);
+  };
+
+  return (
+    <div>
+      <RequestForm call={call} setCall={setCall} submit={handleSubmit} />
+      <FinancingCheck call={call} setCall={setCall} />
+      <Disclaimer name="Request Info" />
+      <AgentList agents={agents} setAgent={setAgent} />
+    </div>
+  );
+};
 
 RequestModule.propTypes = {
+  submit: PropTypes.func.isRequired,
   call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
   agents: PropTypes.shape([]).isRequired,
