@@ -1,26 +1,19 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import CalDate from './CalDate';
-/*
-Format:
-"date" : "11/17/2020", "time" : "7:00 AM"
-TODO: styling
-
-*/
+import CalendarArrows from './CalendarArrows';
 
 const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
+// Recursively gets and formats next seven days.
 const getDays = (date = new Date(), result = []) => {
-  // const date = new Date();
-  if (result.length === 7) {
-    return result;
-  }
+  if (result.length === 7) { return result; }
 
   const month = date.getMonth() + 1;
   const currentDate = date.getDate();
-  const year = date.getYear();
+  const year = date.getFullYear();
 
   const dateObj = {
     name: days[date.getDay()],
@@ -28,27 +21,40 @@ const getDays = (date = new Date(), result = []) => {
     day: currentDate,
     date: `${month}/${currentDate}/${year}`,
   };
-
   result.push(dateObj);
   const tomorrow = new Date(date.getTime() + (24 * 60 * 60 * 1000));
 
-  // eslint-disable-next-line no-unused-vars
   return getDays(tomorrow, result);
 };
 
-const Calendar = ({ setDate }) => {
+const Calendar = ({ currentDate, setDate }) => {
+  const [direction, setDirection] = useState('right');
   const dateList = getDays();
+
+  // Passing in empty array makes this ComponentDidMount - one render only!
   useEffect(() => {
     setDate(dateList[0].date);
-  });
+  }, []);
 
   return (
-    <div>
-      {dateList.map((date) => (<CalDate date={date} setDate={setDate} />)) }
+    <div id="calendarCarousel">
+      <CalendarArrows direction={direction} setDirection={setDirection} arrowDir="left" />
+      {dateList.map((formattedDate) => (
+        <CalDate
+          currentDate={currentDate}
+          setDate={setDate}
+          date={formattedDate}
+          direction={direction}
+        />
+      )) }
+      <CalendarArrows direction={direction} setDirection={setDirection} arrowDir="right" />
     </div>
   );
 };
 
-Calendar.propTypes = { setDate: PropTypes.func.isRequired };
+Calendar.propTypes = {
+  currentDate: PropTypes.string.isRequired,
+  setDate: PropTypes.func.isRequired,
+};
 
 export default Calendar;
