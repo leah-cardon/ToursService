@@ -3,6 +3,10 @@ const { User, Agent } = require('./database.js');
 // Gets list of all users.
 const getUsers = () => User.find();
 
+const getRequests = (res) => User.find({}, 'date time').exec()
+  .then((results) => res.status(200).send(results))
+  .catch((err) => res.status(500).send(err));
+
 // Inserts user into database if not already there.
 const insertUser = (user, res) => {
   User.findOne({ name: user.name })
@@ -31,14 +35,15 @@ const getAgents = (res) => Agent.find()
 // --------------- Seeding Scripts --------------- //
 const seedUsers = (users) => User.deleteMany({})
   .then(() => User.insertMany(users))
-  .catch((err) => console.err(err));
+  .catch((err) => console.error(err));
 
 const seedAgents = (agents) => Agent.deleteMany({})
   .then(() => Agent.insertMany(agents))
-  .catch((err) => console.err(err));
+  .catch((err) => console.error(err));
 
 module.exports = {
   getUsers,
+  getRequests,
   getAgents,
   insertUser,
   seedUsers,

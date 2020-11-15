@@ -17,6 +17,9 @@ app.get('/', (req, res) => {
 // Inserts a user's tour request to the database
 app.post('/api/tours/users', (req, res) => db.insertUser(req.body, res));
 
+// Get date and time of every request in the database
+app.get('/api/tours/requests', (req, res) => db.getRequests(res));
+
 // Gets list of all agents and send to the client.
 app.get('/api/tours/agents', (req, res) => db.getAgents(res));
 
