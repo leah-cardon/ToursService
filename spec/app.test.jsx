@@ -10,15 +10,10 @@ describe('App Test Suite', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  test('should have a div with testApp class', () => {
+  test('should have a div with appContainer class', () => {
     const actual = wrapper.find('div').prop('className');
-    const expected = 'testApp';
+    const expected = 'appContainer';
 
     expect(actual).toEqual(expected);
-  });
-
-  test('should render to static HTML', () => {
-    const rendered = render(<App />);
-    expect(rendered.text()).toEqual('Hello World:0');
   });
 });
