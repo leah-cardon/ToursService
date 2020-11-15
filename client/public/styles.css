@@ -18,7 +18,7 @@ body {
 
 /* App container */
 
-.testApp {
+.appContainer {
   border: solid 16px transparent;
   border-style: solid;
   border-color: transparent;
@@ -78,7 +78,6 @@ body {
 
 /* Module Container */
 
-
 #moduleContainer {
   display: flex;
   flex-direction: column;
@@ -88,11 +87,7 @@ body {
   padding: 15px;
   border-radius: 0px 0px 8px 0;
   border-top: none;
-  /* overflow: auto; */
 }
-
-
-
 
 /* Tour Type */
 
@@ -217,15 +212,6 @@ body {
   transition-delay: .5s;
 }
 
-
-/* .calArrow:active + .svgArr {
-
-} */
-/* .calArrow:active > .svgArr {
-  fill: rgb(255, 255, 255);
-} */
-
-
 /* Calendar Item */
 
 .calGridItem {
@@ -241,8 +227,6 @@ body {
   transform: translateX(-300%);
   transition: transform 0.45s ease 0s;
 }
-
-
 
 .calButton {
   border-radius: 8px;

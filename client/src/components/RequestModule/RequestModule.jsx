@@ -13,17 +13,17 @@ Disclaimer only needs us to pass in name of module
 
 */
 
-const RequestModule = ({ financeCall, setCall, agents }) => (
+const RequestModule = ({ call, setCall, agents }) => (
   <div>
     <RequestForm />
-    <FinancingCheck financeCall={financeCall} setCall={setCall} />
+    <FinancingCheck call={call} setCall={setCall} />
     <Disclaimer name="Request Info" />
     <AgentList agents={agents} />
   </div>
 );
 
 RequestModule.propTypes = {
-  financeCall: PropTypes.bool.isRequired,
+  call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
   agents: PropTypes.shape([]).isRequired,
 };

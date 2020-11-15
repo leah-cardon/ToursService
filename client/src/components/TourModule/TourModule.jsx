@@ -21,7 +21,7 @@ have a handleSubmit here which passes info up the chain!
 
 */
 
-const TourModule = ({ financeCall, setCall, requests }) => {
+const TourModule = ({ call, setCall, requests }) => {
   const [currentDate, setDate] = useState('');
   const [digital, setDigital] = useState(false);
 
@@ -30,14 +30,14 @@ const TourModule = ({ financeCall, setCall, requests }) => {
       <TourType digital={digital} setDigital={setDigital} />
       <Calendar currentDate={currentDate} setDate={setDate} />
       <TimeDropdown occupied={requests} currentDate={currentDate} />
-      <RequestForm tour financeCall={financeCall} setCall={setCall} />
+      <RequestForm tour call={call} setCall={setCall} />
       <Disclaimer name="Schedule A Tour" />
     </div>
   );
 };
 
 TourModule.propTypes = {
-  financeCall: PropTypes.bool.isRequired,
+  call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
   requests: PropTypes.shape([]).isRequired,
 };

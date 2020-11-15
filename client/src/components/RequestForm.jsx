@@ -10,7 +10,7 @@ Need to write API submit logic.
 
 */
 
-const RequestForm = ({ tour, financeCall, setCall }) => {
+const RequestForm = ({ tour, call, setCall }) => {
   const [form, setForm] = useState({
     name: '', phone: '', email: '', interest: '',
   });
@@ -37,7 +37,7 @@ const RequestForm = ({ tour, financeCall, setCall }) => {
         <input name="name" value={form.name} placeholder="Name" onChange={onChange} />
         <input name="phone" value={form.phone} placeholder="Phone" onChange={onChange} />
         <input name="email" value={form.email} placeholder="Email" onChange={onChange} />
-        {tour ? (<FinancingCheck financeCall={financeCall} setCall={setCall} />) : interested}
+        {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
         <button type="submit">{buttonName}</button>
       </form>
     </div>
@@ -46,7 +46,7 @@ const RequestForm = ({ tour, financeCall, setCall }) => {
 
 RequestForm.propTypes = {
   tour: PropTypes.bool.isRequired,
-  financeCall: PropTypes.bool.isRequired,
+  call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
 };
 

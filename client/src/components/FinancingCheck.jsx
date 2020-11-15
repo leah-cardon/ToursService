@@ -6,7 +6,7 @@ TODO:
 FINISH CHECKBOX
 */
 
-const FinancingCheck = ({ financeCall, setCall }) => {
+const FinancingCheck = ({ call, setCall }) => {
   const toggle = () => setCall((currentCall) => !currentCall);
 
   const yesCall = (<p>A licensed lender will call you soon</p>);
@@ -15,13 +15,13 @@ const FinancingCheck = ({ financeCall, setCall }) => {
   return (
     <div id="financeBox">
       <input id="finBox" type="checkbox" onChange={toggle} />
-      <label htmlFor="finBox" id="financeMessage">{financeCall ? yesCall : noCall}</label>
+      <label htmlFor="finBox" id="financeMessage">{call ? yesCall : noCall}</label>
     </div>
   );
 };
 
 FinancingCheck.propTypes = {
-  financeCall: PropTypes.bool.isRequired,
+  call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
 };
 
