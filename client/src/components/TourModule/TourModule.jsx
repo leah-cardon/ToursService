@@ -49,7 +49,7 @@ TourModule.propTypes = {
   submit: PropTypes.func.isRequired,
   call: PropTypes.bool.isRequired,
   setCall: PropTypes.func.isRequired,
-  requests: PropTypes.shape([]).isRequired,
+  requests: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default TourModule;

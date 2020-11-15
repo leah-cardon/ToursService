@@ -31,14 +31,12 @@ const getConnection = async () => {
   try {
     await mongoose.connect('mongodb://localhost/tourDb', { useNewUrlParser: true, useUnifiedTopology: true });
   } catch (err) {
-    console.error('Connection to DB Failed');
+    console.error('ERROR: Connection to tourDb failed!');
   }
 };
 
 // Open the connection.
-getConnection()
-  .then(() => console.log('Connected to toursDB!'))
-  .catch((err) => console.error(err));
+getConnection().catch((err) => console.error(err));
 
 module.exports = {
   User,

@@ -29,7 +29,7 @@ const RequestForm = ({
   const handleSubmit = (e) => {
     e.preventDefault();
     const toSubmit = { ...form };
-    toSubmit.message === '' ? delete toSubmit.message : null;
+    tour ? delete toSubmit.message : null;
     submit(toSubmit);
   };
 

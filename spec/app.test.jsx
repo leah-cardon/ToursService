@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import App from '../client/src/components/App';
 
@@ -11,9 +11,15 @@ describe('App Test Suite', () => {
   });
 
   test('should have a div with appContainer class', () => {
-    const actual = wrapper.find('div').prop('className');
-    const expected = 'appContainer';
+    const divs = wrapper.find('div');
 
-    expect(actual).toEqual(expected);
+    let found = false;
+
+    divs.forEach((div) => {
+      // eslint-disable-next-line no-unused-expressions
+      div.prop('className') === 'appContainer' ? found = true : null;
+    });
+
+    expect(found).toEqual(true);
   });
 });
