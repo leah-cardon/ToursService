@@ -61,3 +61,22 @@ export const getDays = (date = new Date(), result = []) => {
 
   return getDays(tomorrow, result);
 };
+
+// eslint-disable-next-line no-useless-escape
+const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+const phoneRegex = /^\(?([0-9]{3})\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$/;
+
+// Verifies if a given field is a valid entry.
+export const validate = (name, form, setError) => {
+  setError((state) => {
+    const a = state;
+    if (name === 'name') {
+      a.name = form.name.length === 0;
+    } else if (name === 'number') {
+      a.number = !phoneRegex.test(form.number);
+    } else if (name === 'email') {
+      a.email = !emailRegex.test(form.email);
+    }
+    return ({ ...a });
+  });
+};
