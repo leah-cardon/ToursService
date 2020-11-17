@@ -17,7 +17,6 @@ const createFakeUsers = (agents) => {
     return `${year}-${month}-${day}`;
   });
 
-  // insert 7 into future() ?
   for (let i = 0; i < 100; i += 1) {
     const date = new Date(faker.date.between(range[0], range[1]));
     const hour = date.getHours() % 12;
