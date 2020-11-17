@@ -30,7 +30,9 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submit(form);
+    const toSubmit = { ...form };
+    tour ? delete toSubmit.message : null;
+    submit(toSubmit);
   };
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';
@@ -52,6 +54,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
       {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
 
       <button type="submit">{buttonName}</button>
+      {!tour ? (<FinancingCheck call={call} setCall={setCall} />) : null}
     </form>
   );
 };
