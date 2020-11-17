@@ -2,7 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { errExcl } from '../utils/SVG';
+import { errExcl } from '../../utils/SVG';
 
 /*
 TODO:

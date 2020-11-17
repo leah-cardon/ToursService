@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-import { validate } from '../utils/Logic';
+import { validate } from '../../utils/Logic';
 
-import FinancingCheck from './FinancingCheck';
+import FinancingCheck from '../FinancingCheck';
 import FormErrors from './FormErrors';
 
 /*

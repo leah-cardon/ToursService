@@ -3,13 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { getData, submitForm } from '../utils/Logic';
 
 import TourRequest from './TourRequest';
-import TourType from './TourModule/TourType';
-import Calendar from './TourModule/Calendar';
-import TimeDropdown from './TourModule/TimeDropdown';
+import TourType from './TourType';
+import Calendar from './Calendar/Calendar';
+import TimeDropdown from './Calendar/TimeDropdown';
 
-import RequestForm from './RequestForm';
+import RequestForm from './Form/RequestForm';
 import Disclaimer from './Disclaimer';
-import AgentList from './RequestModule/AgentList';
+import AgentList from './Agents/AgentList';
 
 const App = () => {
   // State for API calls
