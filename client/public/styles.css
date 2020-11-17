@@ -1,9 +1,10 @@
-@font-face {
-  font-family: "TruliaSans";
-  src: url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Regular.woff2") format("woff");
+@font-face{
+  font-family:"TruliaSans";src: url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Regular.woff2") format("woff2"), url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Regular.woff") format("woff");
 }
 
-
+@font-face{
+  font-family:"TruliaSansBold";src: url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Bold.woff2") format("woff2"), url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Bold.woff") format("woff");
+}
 body {
   margin: 0px;
   padding: 0px;
@@ -24,13 +25,12 @@ body {
   border-color: transparent;
   border-width: 16px 8px 0px;
   box-sizing: border-box;
-  width: 33.4%;
   display: block;
   /* CHANGE THESE LATER */
   position: absolute;
-  right: 200px;
-  max-width: 360px;
-  min-width: 300px;
+  width: 325px;
+  /* right: 179px; */
+  right: 20%;
 }
 
 
@@ -133,8 +133,9 @@ body {
   flex: 1 1 auto;
   border-style: solid;
   cursor: pointer;
-  font-weight: bold;
+  font-weight: normal;
   font-size: 16px;
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   line-height: 1.5;
   padding: 8px 16px;
   border-color: rgb(205, 209, 212);
@@ -147,6 +148,8 @@ body {
 .digital {
   border-radius: 0 8px 8px 0;
 }
+
+
 .notSelected:hover {
   color: rgb(59, 65, 68);
   background-color: rgb(232, 233, 234);
@@ -265,6 +268,8 @@ body {
   outline: none;
   box-shadow: rgb(205, 209, 212) 0px 0px 0px 1px;
   border: 2px solid transparent;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+
 }
 
 .calButton:hover {
@@ -283,10 +288,11 @@ body {
 }
 
 .calDay {
-  font-weight: bold;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.2;
   margin: 5px 0;
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+
 }
 
 .calMonth {
@@ -306,6 +312,8 @@ body {
   padding: 8px;
   border: 1px solid rgb(205, 209, 212);
   border-radius: 8px;
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 16px;
   appearance: none;
   cursor: pointer;
   outline: none;
@@ -325,4 +333,69 @@ body {
   font-size: 18px;
   cursor: pointer;
   user-select: none;
+}
+
+/* Request Form */
+
+.inputField {
+  border-radius: 8px;
+  border: 1px solid rgb(205, 209, 212);
+  padding: 6px;
+  font-size: 16px;
+  line-height: 1.5;
+  outline: currentcolor none medium;
+  transition: box-shadow 0.15s ease 0s, border-color 0.15s ease 0s;
+  margin: 4px 8px 4px 0;
+}
+
+.inputField:focus {
+  box-shadow: rgb(0, 120, 130) 0px 0px 0px 2px;
+}
+
+.inputField::placeholder {
+  color: rgb(134, 144, 153);
+}
+
+#namePhoneFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+#namePhoneFlex input {
+  width: 43%;
+}
+
+#emailForm {
+  width: 94%;
+}
+
+.formErr {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+}
+
+.errText {
+  color: rgb(255, 94, 63);
+  font-size: 12px;
+  line-height: 1.1;
+  padding-left: 3px;
+}
+
+.errSvg {
+  height: 16px;
+  width: 16px;
+  line-height: 1.1;
+}
+
+#errNamePhone {
+  position: relative;
+  margin: -10px 0 0 0;
+}
+
+#errPhone {
+  right: 12px;
+  float: right;
+  margin-right: 11px;
 }
