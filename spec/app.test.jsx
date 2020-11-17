@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, render } from 'enzyme';
+import { shallow } from 'enzyme';
 
 import App from '../client/src/components/App';
 
@@ -10,15 +10,15 @@ describe('App Test Suite', () => {
     expect(wrapper.exists()).toBeTruthy();
   });
 
-  test('should have a div with testApp class', () => {
-    const actual = wrapper.find('div').prop('className');
-    const expected = 'testApp';
+  test('should have a div with appContainer class', () => {
+    const divs = wrapper.find('div');
 
-    expect(actual).toEqual(expected);
-  });
+    let found = false;
 
-  test('should render to static HTML', () => {
-    const rendered = render(<App />);
-    expect(rendered.text()).toEqual('Hello World:0');
+    divs.forEach((div) => {
+      div.prop('className') === 'appContainer' ? found = true : null;
+    });
+
+    expect(found).toEqual(true);
   });
 });

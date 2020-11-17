@@ -1,72 +1,53 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import RequestModule from './RequestModule/RequestModule';
-import TourModule from './TourModule/TourModule';
 
-/*
-TODO:
-Styling is DONE in this component.
-*/
+import { getData, submitForm } from '../utils/Logic';
+
+import TourRequest from './TourRequest';
+import TourType from './TourType';
+import Calendar from './Calendar/Calendar';
+import TimeDropdown from './Calendar/TimeDropdown';
+
+import RequestForm from './Form/RequestForm';
+import Disclaimer from './Disclaimer';
+import AgentList from './Agents/AgentList';
 
 const App = () => {
-  // State for API stuff
+  // State for API calls
   const [requests, setRequests] = useState([]);
   const [agents, setAgents] = useState([]);
 
   // State for user inputs
   const [tour, toggleTour] = useState(true);
-  const [financeCall, setCall] = useState(false);
-
-  const getData = () => axios.get('/api/tours/requests')
-    .then((response) => {
-      setRequests(response.data);
-      return axios.get('/api/tours/agents');
-    })
-    .then((response) => setAgents(response.data))
-    .catch((err) => console.log(err));
+  const [digital, setDigital] = useState(false);
+  const [currentDate, setDate] = useState('');
+  const [call, setCall] = useState(false);
+  const [time, setTime] = useState('');
+  const [agent, setAgent] = useState('');
 
   useEffect(() => {
-    // API call which uses setRequests to grab requests
-    // should we watch any state vars?
-    getData();
+    getData(setRequests, setAgents);
   }, []);
 
-  // const submit = (args) => {
-  //   // REQUIRED PARAMS: name, phone, email
-  //   //  financing call(boolean)
-  //   // REQUEST ONLY: which agent
-  //   // SCHEDULE ONLY: in-person/video chat, date, time
-  // };
-
-  const inPerson = tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
-  const reqInfo = !tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
+  const submit = (form) => {
+    const toSubmit = !tour ? { agent, ...form }
+      : { date: currentDate, type: digital, time, ...form };
+    submitForm({ call, ...toSubmit }).then(() => getData(setRequests, setAgents));
+  };
 
   return (
-    <div className="testApp">
-
-      <div id="tourInfoContainer">
-        <div className="tourGrid">
-          <button className={inPerson} onClick={() => toggleTour(true)} type="button">
-            Schedule A Tour
-          </button>
-
-        </div>
-        <div className="tourGrid">
-          <button className={reqInfo} onClick={() => toggleTour(false)} type="button">
-            Request Info
-          </button>
-
-        </div>
-      </div>
-
+    <div className="appContainer">
+      <TourRequest tour={tour} toggleTour={toggleTour} />
       <div id="moduleContainer">
-        {
-          tour ? (
-            <TourModule financeCall={financeCall} setCall={setCall} requests={requests} />
-          )
-            : (<RequestModule financeCall={financeCall} setCall={setCall} agents={agents} />)
-        }
-
+        {tour ? (
+          <div>
+            <TourType digital={digital} setDigital={setDigital} />
+            <Calendar currentDate={currentDate} setDate={setDate} />
+            <TimeDropdown occupied={requests} currentDate={currentDate} setTime={setTime} />
+          </div>
+        ) : null}
+        <RequestForm tour={tour} call={call} setCall={setCall} submit={submit} />
+        <Disclaimer tour={tour} />
+        {!tour ? (<AgentList agents={agents} setAgent={setAgent} />) : null}
       </div>
 
     </div>

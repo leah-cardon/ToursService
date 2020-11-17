@@ -3,34 +3,20 @@ const { User, Agent } = require('./database.js');
 // Gets list of all users.
 const getUsers = () => User.find();
 
-const getRequests = (res) => User.find({}, 'date time').exec()
-  .then((results) => res.status(200).send(results))
-  .catch((err) => res.status(500).send(err));
+const getRequests = () => User.find({}, 'date time').exec();
 
 // Inserts user into database if not already there.
-const insertUser = (user, res) => {
-  User.findOne({ name: user.name })
-    .then((existingUser) => {
-      if (!existingUser) {
-        console.log(`Inserted ${user.name} into the database!`);
-        return User.create(user)
-          .then(() => res.sendStatus(200));
-      }
-      throw (new Error('User exists!'));
-    })
-    .catch((err) => {
-      console.error(err);
-      res.status(500).send(`${err}`);
-    });
-};
+const insertUser = (user) => User.findOne({ name: user.name })
+  .then((existingUser) => {
+    if (!existingUser) {
+      console.log(`Inserted ${user.name} into the database!`);
+      return User.create(user);
+    }
+    throw (new Error('User exists!'));
+  });
 
 // Get list of all agents.
-const getAgents = (res) => Agent.find()
-  .then((agents) => res.status(200).send(agents))
-  .catch((err) => {
-    console.error(err);
-    res.status(500).send(`${err}`);
-  });
+const getAgents = () => Agent.find().exec();
 
 // --------------- Seeding Scripts --------------- //
 const seedUsers = (users) => User.deleteMany({})
