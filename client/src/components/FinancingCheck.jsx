@@ -3,12 +3,6 @@ import PropTypes from 'prop-types';
 
 import { checkMark } from '../utils/SVG';
 
-/*
-TODO:
-FINISH CHECKBOX
-Styling
-*/
-
 const FinancingCheck = ({ call, setCall }) => {
   const toggle = () => setCall((currentCall) => !currentCall);
 

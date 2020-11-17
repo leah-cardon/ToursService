@@ -17,7 +17,7 @@ const TimeDropdown = ({ occupied, currentDate, setTime }) => {
 
   return (
     <div id="timeContainer">
-      <select id="timeSelect" onChange={(e) => setTime(e.target.value)}>
+      <select id="timeSelect" form="userForm" onChange={(e) => setTime(e.target.value)} required>
         <option value="">Choose a Time</option>
         {available.map((slot) => (<option value={slot}>{slot}</option>))}
       </select>

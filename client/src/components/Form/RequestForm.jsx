@@ -9,7 +9,6 @@ import FormErrors from './FormErrors';
 /*
 TODO:
 Need property name from whoever's module that is.
-Prevent submit if any errors
 */
 
 const RequestForm = ({ tour, call, setCall, submit }) => {
@@ -24,6 +23,11 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
   const verify = (e) => validate(e.target.name, form, setError);
 
+  const verifyAll = () => {
+    ['name', 'number', 'email'].forEach((name) => validate(name, form, setError));
+    return !!(errors.name || errors.number || errors.email);
+  };
+
   const onChange = (e) => {
     setForm((state) => ({ ...state, [e.target.name]: e.target.value }));
   };
@@ -32,7 +36,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
     e.preventDefault();
     const toSubmit = { ...form };
     tour ? delete toSubmit.message : null;
-    submit(toSubmit);
+    verifyAll ? submit(toSubmit) : null;
   };
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';
@@ -40,7 +44,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
   const interested = (<textarea name="message" value={form.message} onChange={onChange} className="inputField" />);
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form id="userForm" onSubmit={handleSubmit}>
 
       <div id="namePhoneFlex">
         <input name="name" value={form.name} placeholder="Name" onChange={onChange} onBlur={verify} className="inputField" required />
@@ -53,7 +57,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
       {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
 
-      <button type="submit">{buttonName}</button>
+      <button id="tourSubmit" type="submit">{buttonName}</button>
       {!tour ? (<FinancingCheck call={call} setCall={setCall} />) : null}
     </form>
   );

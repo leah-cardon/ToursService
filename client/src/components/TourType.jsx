@@ -9,8 +9,8 @@ const text = 'If you\'d like to tour this home without leaving yours, select the
 const hoverDisplay = (<p style={{ whiteSpace: 'pre-wrap' }}>{text}</p>);
 
 const TourType = ({ digital, setDigital }) => {
-  const inPerson = !digital ? 'selected tourButton tour' : 'notSelected tourButton tour';
-  const virtual = digital ? 'selected tourButton digital' : 'notSelected tourButton digital';
+  const inPerson = !digital ? 'typeSelect tourButton tour' : 'notType tourButton tour';
+  const virtual = digital ? 'typeSelect tourButton digital' : 'notType tourButton digital';
 
   return (
     <div>

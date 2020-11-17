@@ -33,6 +33,7 @@ body {
   right: 20%;
 }
 
+/* Tour Type Toggle */
 
 #tourInfoContainer {
   display: flex;
@@ -88,7 +89,7 @@ body {
 }
 
 
-/* Module Container */
+/* Modules */
 
 #moduleContainer {
   display: flex;
@@ -103,20 +104,22 @@ body {
 
 /* Tour Type */
 
-#toolTip {
-  max-width: 33vw !important;
-  padding: 3px 10px;
-}
-
 .tourTypeContainer {
   color: rgb(134, 144, 153);
   flex-direction: row;
   display: flex;
 }
+
 #tourButtonContainer {
   display: inline-flex;
   width: 100%;
 }
+
+#toolTip {
+  max-width: 33vw !important;
+  padding: 3px 10px;
+}
+
 .tourButton {
   flex: 1 1 auto;
   border-style: solid;
@@ -137,22 +140,21 @@ body {
   border-radius: 0 8px 8px 0;
 }
 
+.typeSelect {
+  background-color: rgb(0, 120, 130);
+  color: rgb(255, 255, 255);
+  border: none;
+}
 
-.notSelected:hover {
+.notType:hover {
   color: rgb(59, 65, 68);
   background-color: rgb(232, 233, 234);
   border-color: transparent;
 }
-.notSelected:active {
+.notType:active {
   color: rgb(255, 255, 255);
   background-color: rgb(134, 144, 153);
   border-color: transparent;
-}
-
-.selected {
-  background-color: rgb(0, 120, 130);
-  color: rgb(255, 255, 255);
-  border: none;
 }
 
 .svg {
@@ -166,10 +168,6 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-}
-
-#financeBox:hover {
-
 }
 
 #checkContainer {
@@ -345,6 +343,7 @@ body {
 }
 
 /* Time Dropdown */
+
 #timeContainer {
   position: relative;
   padding: 0 0 8px;
@@ -382,6 +381,15 @@ body {
 
 /* Request Form */
 
+#namePhoneFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+#namePhoneFlex input {
+  width: 43%;
+}
+
 .inputField {
   border-radius: 8px;
   border: 1px solid rgb(205, 209, 212);
@@ -401,18 +409,11 @@ body {
   color: rgb(134, 144, 153);
 }
 
-#namePhoneFlex {
-  display: flex;
-  flex-direction: row;
-}
-
-#namePhoneFlex input {
-  width: 43%;
-}
-
 #emailForm {
   width: 94%;
 }
+
+/* Validation Error Messages */
 
 .formErr {
   display: flex;
@@ -449,4 +450,40 @@ body {
   right: 12px;
   float: right;
   margin-right: 11px;
+}
+
+/* Submit Button */
+
+#tourSubmit {
+  width: 100%;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(217, 60, 35);
+  color: rgb(255, 255, 255);
+  font-family: "TruliaSans";
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 4px 0 0 0;
+}
+
+#tourSubmit:hover {
+  color: rgb(217, 60, 35);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(217, 60, 35);
+}
+
+#tourSubmit:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(156, 17, 20);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#tourSubmit:focus {
+  color: rgb(217, 60, 35);
+  background-color: rgb(255, 234, 216);
+  border-color: rgb(217, 60, 35);
+  outline: currentcolor none medium;
 }
