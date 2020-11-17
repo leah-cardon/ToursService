@@ -16,10 +16,14 @@ const TimeDropdown = ({ occupied, currentDate, setTime }) => {
   }, [currentDate, occupied]);
 
   return (
-    <select onChange={(e) => setTime(e.target.value)}>
-      <option value="">Choose a Time</option>
-      {available.map((slot) => (<option value={slot}>{slot}</option>))}
-    </select>
+    <div id="timeContainer">
+      <select id="timeSelect" onChange={(e) => setTime(e.target.value)}>
+        <option value="">Choose a Time</option>
+        {available.map((slot) => (<option value={slot}>{slot}</option>))}
+      </select>
+      <p id="selectArrow">&gt;</p>
+
+    </div>
   );
 };
 

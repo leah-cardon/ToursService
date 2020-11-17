@@ -27,10 +27,8 @@ const App = () => {
     <div className="appContainer">
       <TourRequest tour={tour} toggleTour={toggleTour} />
 
-      <div id="moduleContainer">
-        {tour ? (<TourModule submit={submit} call={call} setCall={setCall} requests={requests} />)
-          : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)}
-      </div>
+      {tour ? (<TourModule submit={submit} call={call} setCall={setCall} requests={requests} />)
+        : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)}
 
     </div>
   );
