@@ -115,9 +115,11 @@ body {
   width: 100%;
 }
 
-#toolTip {
+#tourToolTip {
   max-width: 33vw !important;
   padding: 3px 10px;
+  font-family: "TruliaSans";
+  font-size: 16px;
 }
 
 .tourButton {
@@ -486,4 +488,29 @@ body {
   background-color: rgb(255, 234, 216);
   border-color: rgb(217, 60, 35);
   outline: currentcolor none medium;
+}
+
+/* Disclaimer */
+
+#disclaimerText {
+  font-family: "TruliaSans";
+  font-size: 10px;
+  color: rgb(134, 144, 153);
+  outline: none;
+}
+
+.terms {
+  display: inline;
+  font-family: "TruliaSans";
+  font-size: 10px;
+  color: rgb(0, 120, 130);
+  text-decoration: none;
+  outline: none;
+}
+
+#disclToolTip {
+  font-family: "TruliaSans";
+  font-size: 10px;
+  color: rgb(134, 144, 153);
+  outline: none;
 }

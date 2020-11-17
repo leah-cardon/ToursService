@@ -16,8 +16,8 @@ const TourType = ({ digital, setDigital }) => {
     <div>
       <div className="tourTypeContainer">
         <p>Tour Type</p>
-        <p data-tip data-for="toolTip" data-place="bottom">{qMark}</p>
-        <ReactTooltip id="toolTip" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
+        <p data-tip data-for="tourToolTip" data-place="bottom">{qMark}</p>
+        <ReactTooltip id="tourToolTip" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
       </div>
 
       <div id="tourButtonContainer">
