@@ -90,7 +90,7 @@ body {
 
 /* Module Container */
 
-#tourContainer {
+#moduleContainer {
   display: flex;
   flex-direction: column;
   box-shadow: rgba(59, 65, 68, 0.18) 0px 17px 21px -1px;
@@ -100,18 +100,6 @@ body {
   border-radius: 0px 8px 8px 8px;
   border-top: none;
 }
-
-#requestContainer {
-  display: flex;
-  flex-direction: column;
-  box-shadow: rgba(59, 65, 68, 0.18) 0px 17px 21px -1px;
-  background-color: rgb(255, 255, 255);
-  border: 1px solid rgb(232, 233, 234);
-  padding: 15px;
-  border-radius: 8px 0px 8px 8px;
-  border-top: none;
-}
-
 
 /* Tour Type */
 

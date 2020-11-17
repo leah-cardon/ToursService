@@ -3,8 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { getData, submitForm } from '../utils/Logic';
 
 import TourRequest from './TourRequest';
-import RequestModule from './RequestModule/RequestModule';
-import TourModule from './TourModule/TourModule';
+import TourType from './TourModule/TourType';
+import Calendar from './TourModule/Calendar';
+import TimeDropdown from './TourModule/TimeDropdown';
+
+import RequestForm from './RequestForm';
+import Disclaimer from './Disclaimer';
+import AgentList from './RequestModule/AgentList';
 
 const App = () => {
   // State for API calls
@@ -13,22 +18,37 @@ const App = () => {
 
   // State for user inputs
   const [tour, toggleTour] = useState(true);
+  const [digital, setDigital] = useState(false);
+  const [currentDate, setDate] = useState('');
   const [call, setCall] = useState(false);
+  const [time, setTime] = useState('');
+  const [agent, setAgent] = useState('');
 
   useEffect(() => {
     getData(setRequests, setAgents);
   }, []);
 
   const submit = (form) => {
-    submitForm({ call, ...form }).then(() => getData(setRequests, setAgents));
+    const toSubmit = !tour ? { agent, ...form }
+      : { date: currentDate, type: digital, time, ...form };
+    submitForm({ call, ...toSubmit }).then(() => getData(setRequests, setAgents));
   };
 
   return (
     <div className="appContainer">
       <TourRequest tour={tour} toggleTour={toggleTour} />
-
-      {tour ? (<TourModule submit={submit} call={call} setCall={setCall} requests={requests} />)
-        : (<RequestModule submit={submit} call={call} setCall={setCall} agents={agents} />)}
+      <div id="moduleContainer">
+        {tour ? (
+          <div>
+            <TourType digital={digital} setDigital={setDigital} />
+            <Calendar currentDate={currentDate} setDate={setDate} />
+            <TimeDropdown occupied={requests} currentDate={currentDate} setTime={setTime} />
+          </div>
+        ) : null}
+        <RequestForm tour={tour} call={call} setCall={setCall} submit={submit} />
+        <Disclaimer tour={tour} />
+        {!tour ? (<AgentList agents={agents} setAgent={setAgent} />) : null}
+      </div>
 
     </div>
   );
