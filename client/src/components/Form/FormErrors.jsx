@@ -19,7 +19,7 @@ const FormErrors = ({ name, number, email }) => (
       </div>
     ) : null}
     {email ? (
-      <div className="formErr">{errExcl}<p className="errEmail">Enter a valid email.</p></div>
+      <div className="formErr" id="errEmail">{errExcl}<p className="errText">Enter a valid email.</p></div>
     ) : null}
   </div>
 );

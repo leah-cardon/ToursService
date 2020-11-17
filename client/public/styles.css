@@ -165,10 +165,67 @@ body {
 #financeBox {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+#financeBox:hover {
+
+}
+
+#checkContainer {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#finBox {
+  opacity: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+
+#financeMessage {
+  color: rgb(134, 144, 153);
+  font-size: 12px;
+  line-height: 1.33;
+  cursor: pointer;
+  width: 100%;
+}
+
+#finBox:checked {
+  filter: drop-shadow(rgba(0, 120, 130, 0.5) 0px 2px 3px);
+}
+
+/* checkMark SVG styles */
+
+#finBox:checked ~ * .checkContent {
+  display: block;
 }
 
 
-/* TOUR COMPONENT SPECIFIC STYLES */
+.checkContent {
+  display: none;
+}
+
+#financeBox:hover #checkSquare {
+  stroke: rgb(59, 65, 68);
+}
+
+#checkSquare {
+  fill: none;
+  stroke: rgb(205, 209, 212);
+}
+
+#finBox:checked ~ * #checkSquare {
+  fill: rgb(0, 120, 130);
+  stroke: rgb(0, 120, 130);
+  filter: drop-shadow(rgba(0, 120, 130, 0.5) 0px 2px 3px);
+}
 
 /* Calendar Carousel */
 
@@ -362,6 +419,12 @@ body {
   flex-direction: row;
   align-items: center;
   float: left;
+}
+
+#errEmail {
+  position: relative;
+  float: none;
+  margin-top: -10px;
 }
 
 .errText {

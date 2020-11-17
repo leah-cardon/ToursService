@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 
-import { qMark } from '../../utils/SVG';
+import { qMark } from '../utils/SVG';
 
 const text = 'If you\'d like to tour this home without leaving yours, select the video chat tour type and discuss available options with the agent you are connected with.';
 

@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { checkMark } from '../utils/SVG';
+
 /*
 TODO:
 FINISH CHECKBOX
-Styling.
+Styling
 */
 
 const FinancingCheck = ({ call, setCall }) => {
@@ -15,7 +17,10 @@ const FinancingCheck = ({ call, setCall }) => {
 
   return (
     <div id="financeBox">
-      <input id="finBox" type="checkbox" onChange={toggle} />
+      <div id="checkContainer">
+        <input id="finBox" type="checkbox" onChange={toggle} />
+        {checkMark}
+      </div>
       <label htmlFor="finBox" id="financeMessage">{call ? yesCall : noCall}</label>
     </div>
   );

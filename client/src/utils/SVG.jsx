@@ -13,3 +13,15 @@ export const errExcl = (<svg className="errSvg" viewBox="0 0 32 32" xmlns="http:
 export const left = (<svg className="svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M14.292 16.494l7.147 7.056-1.869 1.893-9.067-8.951 9.069-8.927 1.866 1.896z" /></svg>);
 
 export const right = (<svg className="svg" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
+
+// Financing Checkbox
+
+export const checkMark = (
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+    <g>
+      <rect className="checkContent" data-cb-part="blur" strokeWidth="2" width="18" height="18" x="3" y="3" rx="4" />
+      <rect id="checkSquare" data-cb-part="background" strokeWidth="2" width="18" height="18" x="3" y="3" rx="4" />
+      <path className="checkContent" data-cb-part="check" fill="none" stroke="#FFF" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 13l2.5 2L15 9" />
+    </g>
+  </svg>
+);
