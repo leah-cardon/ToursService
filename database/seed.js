@@ -38,6 +38,12 @@ const createFakeUsers = (agents) => {
   return users;
 };
 
+const getPhotoURL = () => {
+  const gender = ['men', 'women'][Math.floor(Math.random() * 2)];
+  const number = Math.floor(Math.random() * 100);
+  return `https://randomuser.me/api/portraits/${gender}/${number}.jpg`;
+};
+
 const createFakeAgents = () => {
   const agents = [];
   const titles = ['Listing', 'Premier'];
@@ -49,7 +55,8 @@ const createFakeAgents = () => {
       stars: Math.floor((Math.random() * 5) + 1),
       reviews: Math.floor((Math.random() * 100) + 1),
       sales: Math.floor((Math.random() * 100) + 1),
-      photo: faker.image.avatar(),
+      // photo: faker.image.avatar(),
+      photo: getPhotoURL(),
     };
     agents.push(fakeAgent);
   }
