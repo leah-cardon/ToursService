@@ -3,11 +3,6 @@ import PropTypes from 'prop-types';
 
 import { getFreeSlots } from '../../utils/Logic';
 
-/*
-TODO
-Styling
-*/
-
 const TimeDropdown = ({ occupied, currentDate, setTime }) => {
   const [available, setAvailable] = useState([]);
 

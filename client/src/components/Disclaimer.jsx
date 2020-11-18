@@ -1,20 +1,16 @@
-/* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 
 import HealthAdvisory from './HealthAdvisory';
 
+const disclText = 'Real estate professionals include the real estate agents and brokers, mortgage\nlenders and loan officers, property managers, and other professionals you\ninteract with through Trulia.';
+
 const Disclaimer = ({ tour }) => {
-  const name = tour ? 'Schedule A Tour' : 'Request Info';
-
   const terms = (<a className="terms" target="_blank" rel="noreferrer" href="https://www.trulia.com/terms">Terms of Use</a>);
-
   const agentDiscl = (<p data-tip data-for="disclToolTip" data-place="top" className="terms">real estate professionals</p>);
-
-  const disclText = 'Real estate professionals include the real estate agents and brokers, mortgage\nlenders and loan officers, property managers, and other professionals you\ninteract with through Trulia.';
-
   const hover = (<p style={{ whiteSpace: 'pre-wrap' }}>{disclText}</p>);
+  const name = tour ? 'Schedule A Tour' : 'Request Info';
 
   return (
     <div>

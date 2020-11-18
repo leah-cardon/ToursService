@@ -1,12 +1,9 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
 import ReactTooltip from 'react-tooltip';
 import { star, badStar } from '../../utils/SVG';
 
-// Edit to add name, title, number, stars, reviews, sales, photo
 const Agent = ({ agent, setAgent, curAgent }) => {
   const toolTipId = `${agent.name}Tooltip`;
   const selAgent = agent.name === curAgent ? 'selAgent agentPhoto' : 'agentPhoto';
@@ -24,6 +21,7 @@ const Agent = ({ agent, setAgent, curAgent }) => {
     >
       <img className={selAgent} src={agent.photo} alt="AgentIMG" />
       <p className="agentTitle">{`${agent.title}\nAgent`}</p>
+
       <ReactTooltip id={toolTipId} className="agentToolTip opaque" place="top" effect="solid" type="light" clickable delayHide={100}>
         <div className="agentContainer">
           <img className="tooltipPhoto" src={agent.photo} alt="AgentIMG" />
@@ -38,6 +36,7 @@ const Agent = ({ agent, setAgent, curAgent }) => {
           </div>
         </div>
       </ReactTooltip>
+
     </div>
   );
 };

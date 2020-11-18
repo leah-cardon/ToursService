@@ -6,11 +6,7 @@ import { validate } from '../../utils/Logic';
 import FinancingCheck from '../FinancingCheck';
 import FormErrors from './FormErrors';
 
-/*
-TODO:
-Need property name from whoever's module that is.
-*/
-
+// TO DO: Need property name from whoever's module that is.
 const RequestForm = ({ tour, call, setCall, submit }) => {
   const [form, setForm] = useState({
     name: '', number: '', email: '', message: '',
