@@ -25,3 +25,13 @@ export const checkMark = (
     </g>
   </svg>
 );
+
+// Health Advisory.
+
+export const caution = (<svg className="svg caution" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M27.549 26.933H4.371L15.96 3.755l11.589 23.178zM14.63 21.28v2.66h2.66v-2.66h-2.66zm0-8.585v6.643h2.66v-6.643h-2.66z" fill="rgb(0, 120, 130)" /></svg>);
+
+// Agent stars
+
+export const star = (<svg className="stars" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M15.96 3.4l3.7 7.88 8.27 1.264-5.985 6.135 1.412 8.661-7.398-4.09-7.395 4.09 1.411-8.661-5.985-6.135 8.272-1.263z" fill="rgb(242, 196, 48)" fillRule="evenodd" /></svg>);
+
+export const badStar = (<svg className="stars" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M15.96 3.4l3.7 7.88 8.27 1.264-5.985 6.135 1.412 8.661-7.398-4.09-7.395 4.09 1.411-8.661-5.985-6.135 8.272-1.263z" fill="#869099" fillRule="evenodd" /></svg>);
