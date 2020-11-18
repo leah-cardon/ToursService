@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 
 import { qMark } from '../utils/SVG';
 
-const text = 'If you\'d like to tour this home without leaving yours, select the video chat tour type and discuss available options with the agent you are connected with.';
+const text = 'If you\'d like to tour this home without leaving\nyours, select the video chat tour type and discuss\navailable options with the agent you are\nconnected with.';
 
-const hoverDisplay = (<p style={{ whiteSpace: 'pre-wrap' }}>{text}</p>);
+const hoverDisplay = (<p>{text}</p>);
 
 const TourType = ({ digital, setDigital }) => {
   const inPerson = !digital ? 'typeSelect tourButton tour' : 'notType tourButton tour';
@@ -15,9 +15,9 @@ const TourType = ({ digital, setDigital }) => {
   return (
     <div>
       <div className="tourTypeContainer">
-        <p>Tour Type</p>
-        <p data-tip data-for="tourToolTip" data-place="bottom">{qMark}</p>
-        <ReactTooltip id="tourToolTip" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
+        <p style={{ margin: 0 }}>Tour Type</p>
+        <p style={{ margin: 0 }} data-tip data-for="tourToolTip" data-place="bottom">{qMark}</p>
+        <ReactTooltip id="tourToolTip" className="opaque" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
       </div>
 
       <div id="tourButtonContainer">

@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactTooltip from 'react-tooltip';
 
+import HealthAdvisory from './HealthAdvisory';
+
 const Disclaimer = ({ tour }) => {
   const name = tour ? 'Schedule A Tour' : 'Request Info';
 
@@ -16,6 +18,7 @@ const Disclaimer = ({ tour }) => {
 
   return (
     <div>
+      {tour ? <HealthAdvisory /> : null}
       <p id="disclaimerText">
         By pressing {name}, you agree that Trulia and real estate professionals may contact you
         via phone/text about your inquery, which may involve the use of automated means. You are not
@@ -23,7 +26,7 @@ const Disclaimer = ({ tour }) => {
         Message/data rates may apply. You also agree to our {terms}. Trulia does not endorse
         any {agentDiscl}.
       </p>
-      <ReactTooltip id="disclToolTip" place="top" effect="solid" type="light">{hover}</ReactTooltip>
+      <ReactTooltip id="disclToolTip" className="opaque" place="top" effect="solid" type="light">{hover}</ReactTooltip>
     </div>
   );
 };

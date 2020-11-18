@@ -118,7 +118,7 @@ body {
 #tourToolTip {
   max-width: 33vw !important;
   padding: 3px 10px;
-  font-family: "TruliaSans";
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
 }
 
@@ -128,6 +128,7 @@ body {
   cursor: pointer;
   font-weight: normal;
   font-size: 16px;
+  color: rgb(59, 65, 68);
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   line-height: 1.5;
   padding: 8px 16px;
@@ -360,6 +361,7 @@ body {
   border-radius: 8px;
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
+  color: rgb(59, 65, 68);
   appearance: none;
   cursor: pointer;
   outline: none;
@@ -396,6 +398,7 @@ body {
   border-radius: 8px;
   border: 1px solid rgb(205, 209, 212);
   padding: 6px;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   outline: currentcolor none medium;
@@ -413,6 +416,12 @@ body {
 
 #emailForm {
   width: 94%;
+}
+
+#reqMessage {
+  width: 94%;
+  resize: none;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
 }
 
 /* Validation Error Messages */
@@ -464,7 +473,7 @@ body {
   border-radius: 8px;
   background-color: rgb(217, 60, 35);
   color: rgb(255, 255, 255);
-  font-family: "TruliaSans";
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   margin: 4px 0 0 0;
@@ -493,7 +502,7 @@ body {
 /* Disclaimer */
 
 #disclaimerText {
-  font-family: "TruliaSans";
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 10px;
   color: rgb(134, 144, 153);
   outline: none;
@@ -501,7 +510,7 @@ body {
 
 .terms {
   display: inline;
-  font-family: "TruliaSans";
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 10px;
   color: rgb(0, 120, 130);
   text-decoration: none;
@@ -509,8 +518,125 @@ body {
 }
 
 #disclToolTip {
-  font-family: "TruliaSans";
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 10px;
   color: rgb(134, 144, 153);
   outline: none;
+}
+
+/* Agents */
+
+#agentList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.selAgent {
+  border: 3px solid rgb(0, 173, 187);
+  border-radius: 11px;
+}
+
+.agentPhoto {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.agentPhoto:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.agentTitle {
+  display: inline-block;
+  text-align: center;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  color: rgb(134, 144, 153);
+  font-size: 12px;
+  line-height: 1.33;
+  width: 40px;
+}
+
+/* Agent Tooltip */
+
+.agentContainer {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.tooltipPhoto {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.tooltipPhoto:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.agentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltipInfo {
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-size: 14px;
+}
+
+.tooltipName {
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+}
+
+.agentRatings {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(134, 144, 153);
+}
+
+.stars {
+  height: 16px;
+  width: 16px;
+}
+
+.opaque {
+  opacity: 1 !important;
+  box-shadow: rgba(134, 144, 153, 0.18) 0px 8px 16px 0px, rgba(15, 16, 17, 0.05) 0px 2px 4px 0px;
+  border-radius: 12px;
+}
+
+/* Health advisory */
+
+#healthWarning {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(0, 120, 130);
+  font-size: '16px';
+}
+
+#healthToolTip {
+  font-size: 16px;
+  max-width: 50vw;
 }

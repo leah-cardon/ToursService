@@ -21,14 +21,14 @@ const App = () => {
   const [currentDate, setDate] = useState('');
   const [call, setCall] = useState(false);
   const [time, setTime] = useState('');
-  const [agent, setAgent] = useState('');
+  const [curAgent, setAgent] = useState('');
 
   useEffect(() => {
     getData(setRequests, setAgents);
   }, []);
 
   const submit = (form) => {
-    const toSubmit = !tour ? { agent, ...form }
+    const toSubmit = !tour ? { curAgent, ...form }
       : { date: currentDate, type: digital, time, ...form };
     submitForm({ call, ...toSubmit }).then(() => getData(setRequests, setAgents));
   };
@@ -46,7 +46,7 @@ const App = () => {
         ) : null}
         <RequestForm tour={tour} call={call} setCall={setCall} submit={submit} />
         <Disclaimer tour={tour} />
-        {!tour ? (<AgentList agents={agents} setAgent={setAgent} />) : null}
+        {!tour ? (<AgentList curAgent={curAgent} agents={agents} setAgent={setAgent} />) : null}
       </div>
 
     </div>
