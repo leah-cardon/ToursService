@@ -469,11 +469,11 @@ body {
   width: 100%;
   padding: 8px 16px;
   outline: none;
-  border: none;
+  border: solid transparent 1px;
   border-radius: 8px;
   background-color: rgb(217, 60, 35);
   color: rgb(255, 255, 255);
-  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   margin: 4px 0 0 0;
@@ -485,7 +485,6 @@ body {
   color: rgb(217, 60, 35);
   background-color: rgb(255, 255, 255);
   border-color: rgb(217, 60, 35);
-  border: 1px solid;
 }
 
 #tourSubmit:active {
