@@ -1,10 +1,7 @@
-/* eslint-disable react/forbid-prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const CalDate = ({
-  currentDate, date, setDate, direction,
-}) => {
+const CalDate = ({ currentDate, date, setDate, direction }) => {
   // a little confusing, but if arrow points right, we want to display left items.
   const style = direction === 'right' ? 'calGridItem' : 'calGridItem calGridRight';
   const buttonStyle = date.date === currentDate ? 'calButton calSelected' : 'calButton';

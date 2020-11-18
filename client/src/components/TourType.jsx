@@ -2,22 +2,22 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import PropTypes from 'prop-types';
 
-import { qMark } from '../../utils/SVG';
+import { qMark } from '../utils/SVG';
 
-const text = 'If you\'d like to tour this home without leaving yours, select the video chat tour type and discuss available options with the agent you are connected with.';
+const text = 'If you\'d like to tour this home without leaving\nyours, select the video chat tour type and discuss\navailable options with the agent you are\nconnected with.';
 
-const hoverDisplay = (<p style={{ whiteSpace: 'pre-wrap' }}>{text}</p>);
+const hoverDisplay = (<p>{text}</p>);
 
 const TourType = ({ digital, setDigital }) => {
-  const inPerson = !digital ? 'selected tourButton tour' : 'notSelected tourButton tour';
-  const virtual = digital ? 'selected tourButton digital' : 'notSelected tourButton digital';
+  const inPerson = !digital ? 'typeSelect tourButton tour' : 'notType tourButton tour';
+  const virtual = digital ? 'typeSelect tourButton digital' : 'notType tourButton digital';
 
   return (
     <div>
       <div className="tourTypeContainer">
-        <p>Tour Type</p>
-        <p data-tip data-for="toolTip" data-place="bottom">{qMark}</p>
-        <ReactTooltip id="toolTip" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
+        <p style={{ margin: 0 }}>Tour Type</p>
+        <p style={{ margin: 0 }} data-tip data-for="tourToolTip" data-place="bottom">{qMark}</p>
+        <ReactTooltip id="tourToolTip" className="opaque" place="bottom" effect="solid" type="light">{hoverDisplay}</ReactTooltip>
       </div>
 
       <div id="tourButtonContainer">

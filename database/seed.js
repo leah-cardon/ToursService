@@ -41,14 +41,15 @@ const createFakeUsers = (agents) => {
 const createFakeAgents = () => {
   const agents = [];
   const titles = ['Listing', 'Premier'];
-  for (let i = 0; i < 5; i += 1) {
+  for (let i = 0; i < 4; i += 1) {
     const fakeAgent = {
       name: faker.name.findName(),
       title: titles[Math.floor(Math.random() * titles.length)],
+      number: faker.phone.phoneNumber(),
       stars: Math.floor((Math.random() * 5) + 1),
       reviews: Math.floor((Math.random() * 100) + 1),
       sales: Math.floor((Math.random() * 100) + 1),
-      photo: '/assets/tbd',
+      photo: faker.image.avatar(),
     };
     agents.push(fakeAgent);
   }

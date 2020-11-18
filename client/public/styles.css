@@ -33,6 +33,7 @@ body {
   right: 20%;
 }
 
+/* Tour Type Toggle */
 
 #tourInfoContainer {
   display: flex;
@@ -88,7 +89,7 @@ body {
 }
 
 
-/* Module Container */
+/* Modules */
 
 #moduleContainer {
   display: flex;
@@ -103,26 +104,31 @@ body {
 
 /* Tour Type */
 
-#toolTip {
-  max-width: 33vw !important;
-  padding: 3px 10px;
-}
-
 .tourTypeContainer {
   color: rgb(134, 144, 153);
   flex-direction: row;
   display: flex;
 }
+
 #tourButtonContainer {
   display: inline-flex;
   width: 100%;
 }
+
+#tourToolTip {
+  max-width: 33vw !important;
+  padding: 3px 10px;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 16px;
+}
+
 .tourButton {
   flex: 1 1 auto;
   border-style: solid;
   cursor: pointer;
   font-weight: normal;
   font-size: 16px;
+  color: rgb(59, 65, 68);
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   line-height: 1.5;
   padding: 8px 16px;
@@ -137,22 +143,21 @@ body {
   border-radius: 0 8px 8px 0;
 }
 
+.typeSelect {
+  background-color: rgb(0, 120, 130);
+  color: rgb(255, 255, 255);
+  border: none;
+}
 
-.notSelected:hover {
+.notType:hover {
   color: rgb(59, 65, 68);
   background-color: rgb(232, 233, 234);
   border-color: transparent;
 }
-.notSelected:active {
+.notType:active {
   color: rgb(255, 255, 255);
   background-color: rgb(134, 144, 153);
   border-color: transparent;
-}
-
-.selected {
-  background-color: rgb(0, 120, 130);
-  color: rgb(255, 255, 255);
-  border: none;
 }
 
 .svg {
@@ -165,10 +170,63 @@ body {
 #financeBox {
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+
+#checkContainer {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+#finBox {
+  opacity: 0;
+  left: 0;
+  position: absolute;
+  z-index: 1;
+  width: 20px;
+  height: 20px;
+}
+
+#financeMessage {
+  color: rgb(134, 144, 153);
+  font-size: 12px;
+  line-height: 1.33;
+  cursor: pointer;
+  width: 100%;
+}
+
+#finBox:checked {
+  filter: drop-shadow(rgba(0, 120, 130, 0.5) 0px 2px 3px);
+}
+
+/* checkMark SVG styles */
+
+#finBox:checked ~ * .checkContent {
+  display: block;
 }
 
 
-/* TOUR COMPONENT SPECIFIC STYLES */
+.checkContent {
+  display: none;
+}
+
+#financeBox:hover #checkSquare {
+  stroke: rgb(59, 65, 68);
+}
+
+#checkSquare {
+  fill: none;
+  stroke: rgb(205, 209, 212);
+}
+
+#finBox:checked ~ * #checkSquare {
+  fill: rgb(0, 120, 130);
+  stroke: rgb(0, 120, 130);
+  filter: drop-shadow(rgba(0, 120, 130, 0.5) 0px 2px 3px);
+}
 
 /* Calendar Carousel */
 
@@ -288,6 +346,7 @@ body {
 }
 
 /* Time Dropdown */
+
 #timeContainer {
   position: relative;
   padding: 0 0 8px;
@@ -302,6 +361,7 @@ body {
   border-radius: 8px;
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
+  color: rgb(59, 65, 68);
   appearance: none;
   cursor: pointer;
   outline: none;
@@ -325,10 +385,20 @@ body {
 
 /* Request Form */
 
+#namePhoneFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+#namePhoneFlex input {
+  width: 43%;
+}
+
 .inputField {
   border-radius: 8px;
   border: 1px solid rgb(205, 209, 212);
   padding: 6px;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.5;
   outline: currentcolor none medium;
@@ -344,24 +414,29 @@ body {
   color: rgb(134, 144, 153);
 }
 
-#namePhoneFlex {
-  display: flex;
-  flex-direction: row;
-}
-
-#namePhoneFlex input {
-  width: 43%;
-}
-
 #emailForm {
   width: 94%;
 }
+
+#reqMessage {
+  width: 94%;
+  resize: none;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+}
+
+/* Validation Error Messages */
 
 .formErr {
   display: flex;
   flex-direction: row;
   align-items: center;
   float: left;
+}
+
+#errEmail {
+  position: relative;
+  float: none;
+  margin-top: -10px;
 }
 
 .errText {
@@ -386,4 +461,182 @@ body {
   right: 12px;
   float: right;
   margin-right: 11px;
+}
+
+/* Submit Button */
+
+#tourSubmit {
+  width: 100%;
+  padding: 8px 16px;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  background-color: rgb(217, 60, 35);
+  color: rgb(255, 255, 255);
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 4px 0 0 0;
+}
+
+#tourSubmit:hover {
+  color: rgb(217, 60, 35);
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(217, 60, 35);
+}
+
+#tourSubmit:active {
+  color: rgb(255, 255, 255);
+  background-color: rgb(156, 17, 20);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+#tourSubmit:focus {
+  color: rgb(217, 60, 35);
+  background-color: rgb(255, 234, 216);
+  border-color: rgb(217, 60, 35);
+  outline: currentcolor none medium;
+}
+
+/* Disclaimer */
+
+#disclaimerText {
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 10px;
+  color: rgb(134, 144, 153);
+  outline: none;
+}
+
+.terms {
+  display: inline;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 10px;
+  color: rgb(0, 120, 130);
+  text-decoration: none;
+  outline: none;
+}
+
+#disclToolTip {
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  font-size: 10px;
+  color: rgb(134, 144, 153);
+  outline: none;
+}
+
+/* Agents */
+
+#agentList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.selAgent {
+  border: 3px solid rgb(0, 173, 187);
+  border-radius: 11px;
+}
+
+.agentPhoto {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.agentPhoto:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.agentTitle {
+  display: inline-block;
+  text-align: center;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  color: rgb(134, 144, 153);
+  font-size: 12px;
+  line-height: 1.33;
+  width: 40px;
+}
+
+/* Agent Tooltip */
+
+.agentContainer {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.tooltipPhoto {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.tooltipPhoto:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.agentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tooltipInfo {
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-size: 14px;
+}
+
+.tooltipName {
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+}
+
+.agentRatings {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(134, 144, 153);
+}
+
+.stars {
+  height: 16px;
+  width: 16px;
+}
+
+.opaque {
+  opacity: 1 !important;
+  box-shadow: rgba(134, 144, 153, 0.18) 0px 8px 16px 0px, rgba(15, 16, 17, 0.05) 0px 2px 4px 0px;
+  border-radius: 12px;
+}
+
+/* Health advisory */
+
+#healthWarning {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(0, 120, 130);
+  font-size: '16px';
+}
+
+#healthToolTip {
+  font-size: 16px;
+  max-width: 50vw;
 }
