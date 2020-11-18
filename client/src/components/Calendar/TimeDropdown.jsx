@@ -23,7 +23,7 @@ const TimeDropdown = ({ occupied, currentDate, setTime }) => {
 };
 
 TimeDropdown.propTypes = {
-  occupied: PropTypes.shape([]).isRequired,
+  occupied: PropTypes.arrayOf(PropTypes.object).isRequired,
   currentDate: PropTypes.string.isRequired,
   setTime: PropTypes.func.isRequired,
 };

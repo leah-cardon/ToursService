@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import { checkMark } from '../utils/SVG';
 
+const yesCall = (<p>A licensed lender will call you soon</p>);
+const noCall = (<p>I want to talk about financing</p>);
+
 const FinancingCheck = ({ call, setCall }) => {
   const toggle = () => setCall((currentCall) => !currentCall);
-
-  const yesCall = (<p>A licensed lender will call you soon</p>);
-  const noCall = (<p>I want to talk about financing</p>);
 
   return (
     <div id="financeBox">

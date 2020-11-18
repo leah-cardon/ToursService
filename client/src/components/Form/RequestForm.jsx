@@ -32,7 +32,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
     e.preventDefault();
     const toSubmit = { ...form };
     tour ? delete toSubmit.message : null;
-    verifyAll ? submit(toSubmit) : null;
+    verifyAll() ? submit(toSubmit) : null;
   };
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';
@@ -46,9 +46,11 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
         <input name="name" value={form.name} placeholder="Name" onChange={onChange} onBlur={verify} className="inputField" required />
         <input name="number" type="tel" pattern={phoneRegex} value={form.number} placeholder="Phone" onChange={onChange} onBlur={verify} className="inputField" required />
       </div>
+
       <FormErrors name={errors.name} number={errors.number} />
 
       <input name="email" id="emailForm" type="email" value={form.email} placeholder="Email" onChange={onChange} onBlur={verify} className="inputField" required />
+
       <FormErrors email={errors.email} />
 
       {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
