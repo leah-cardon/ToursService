@@ -477,18 +477,21 @@ body {
   font-size: 16px;
   line-height: 1.5;
   margin: 4px 0 0 0;
+  cursor: pointer;
+  transition: top 0.1s ease 0s, box-shadow 0.1s ease 0s, border-color 0.1s ease 0s, background-color 0.1s ease 0s, color 0.1s ease 0s;
 }
 
 #tourSubmit:hover {
   color: rgb(217, 60, 35);
   background-color: rgb(255, 255, 255);
   border-color: rgb(217, 60, 35);
+  border: 1px solid;
 }
 
 #tourSubmit:active {
-  color: rgb(255, 255, 255);
-  background-color: rgb(156, 17, 20);
-  border-color: transparent;
+  color: rgb(255, 255, 255) !important;
+  background-color: rgb(156, 17, 20) !important;
+  border-color: transparent !important;
   box-shadow: none;
 }
 
