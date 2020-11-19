@@ -27,10 +27,16 @@ const FormErrors = ({ name, number, email }) => (
   </div>
 );
 
+FormErrors.defaultProps = {
+  name: null,
+  number: null,
+  email: null,
+};
+
 FormErrors.propTypes = {
-  name: PropTypes.bool.isRequired,
-  number: PropTypes.bool.isRequired,
-  email: PropTypes.bool.isRequired,
+  name: PropTypes.bool,
+  number: PropTypes.bool,
+  email: PropTypes.bool,
 };
 
 export default FormErrors;
