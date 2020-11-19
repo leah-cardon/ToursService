@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { getFreeSlots } from '../../utils/Logic';
+import s from '../../styles/TimeDropdown.css';
 
 const TimeDropdown = ({ occupied, currentDate, setTime }) => {
   const [available, setAvailable] = useState([]);
@@ -11,12 +12,12 @@ const TimeDropdown = ({ occupied, currentDate, setTime }) => {
   }, [currentDate, occupied]);
 
   return (
-    <div id="timeContainer">
-      <select id="timeSelect" form="userForm" onChange={(e) => setTime(e.target.value)} required>
+    <div id={s.container}>
+      <select id={s.select} form="tourReqForm" onChange={(e) => setTime(e.target.value)} required>
         <option value="">Choose a Time</option>
         {available.map((slot) => (<option value={slot}>{slot}</option>))}
       </select>
-      <p id="selectArrow">&gt;</p>
+      <p id={s.arrow}>&gt;</p>
 
     </div>
   );

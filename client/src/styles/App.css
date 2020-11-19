@@ -1,0 +1,24 @@
+#app {
+  border: solid 16px transparent;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 16px 8px 0px;
+  box-sizing: border-box;
+  display: block;
+
+  /* CHANGE THESE FOR APP POSITIONING ON PAGE */
+  position: absolute;
+  width: 325px;
+  right: 20%;
+}
+
+#module {
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(59, 65, 68, 0.18) 0px 17px 21px -1px;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(232, 233, 234);
+  padding: 15px;
+  border-radius: 0px 8px 8px 8px;
+  border-top: none;
+}

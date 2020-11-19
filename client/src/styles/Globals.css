@@ -1,0 +1,44 @@
+@font-face{
+  font-family:"TruliaSans";src: url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Regular.woff2") format("woff2"), url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Regular.woff") format("woff");
+}
+
+@font-face{
+  font-family:"TruliaSansBold";src: url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Bold.woff2") format("woff2"), url("https://www.trulia.com/images/fonts/TruliaSans_20190627/TruliaSansWeb-Bold.woff") format("woff");
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  font-family: "TruliaSans", system,  -apple-system, Roboto, Segoe UI Bold,  Arial, sans-serif;
+  color: rgb(59, 65, 68);
+  background-color: rgb(255, 255, 255);
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: -0.1px;
+}
+
+/* For tooltips */
+
+:global .opaque {
+  opacity: 1 !important;
+  box-shadow: rgba(134, 144, 153, 0.18) 0px 8px 16px 0px, rgba(15, 16, 17, 0.05) 0px 2px 4px 0px;
+  border-radius: 12px;
+}
+
+/* NOTE: some inline styling done for svgs in SVG.jsx! */
+
+svg {
+  height: 24px;
+  width: 24px;
+}
+
+/* For financial checkbox svg */
+
+:global .finSvgCheck {
+  display: none;
+}
+
+:global #finSvgSqr {
+  fill: none;
+  stroke: rgb(205, 209, 212);
+}

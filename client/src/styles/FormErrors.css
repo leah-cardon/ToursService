@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  float: left;
+}
+
+#email {
+  position: relative;
+  float: none;
+  margin-top: -10px;
+}
+
+.text {
+  color: rgb(255, 94, 63);
+  font-size: 12px;
+  line-height: 1.1;
+  padding-left: 3px;
+}
+
+#namePhone {
+  position: relative;
+  margin: -10px 0 0 0;
+}
+
+#phone {
+  right: 12px;
+  float: right;
+  margin-right: 11px;
+}

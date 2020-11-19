@@ -10,6 +10,9 @@ import RequestForm from './Form/RequestForm';
 import Disclaimer from './Disclaimer';
 import AgentList from './Agents/AgentList';
 
+import '../styles/Globals.css';
+import s from '../styles/App.css';
+
 const App = () => {
   // State for API calls
   const [requests, setRequests] = useState([]);
@@ -34,9 +37,9 @@ const App = () => {
   };
 
   return (
-    <div className="appContainer">
+    <div id={s.app}>
       <TourRequest tour={tour} toggleTour={toggleTour} />
-      <div id="moduleContainer">
+      <div id={s.module}>
         {tour && (
           <div>
             <TourType digital={digital} setDigital={setDigital} />

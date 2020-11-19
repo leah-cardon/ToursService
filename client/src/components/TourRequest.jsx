@@ -1,20 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import s from '../styles/TourRequest.css';
+
 const TourRequest = ({ tour, toggleTour }) => {
-  const inPerson = tour ? 'selTour toggleInfo' : 'noTour toggleInfo';
-  const reqInfo = !tour ? 'selReq toggleInfo' : 'noReq toggleInfo';
+  const inPerson = tour ? s.selTour : s.noTour;
+  const reqInfo = !tour ? s.selReq : s.noReq;
 
   return (
-    <div id="tourInfoContainer">
-      <div className="tourGrid selGrid">
-        <button className={inPerson} onClick={() => toggleTour(true)} type="button">
+    <div id={s.container}>
+      <div className={s.grid}>
+        <button className={`${s.toggle} ${inPerson}`} onClick={() => toggleTour(true)} type="button">
           Schedule A Tour
         </button>
 
       </div>
-      <div className="tourGrid">
-        <button className={reqInfo} onClick={() => toggleTour(false)} type="button">
+      <div className={s.grid}>
+        <button className={`${s.toggle} ${reqInfo}`} onClick={() => toggleTour(false)} type="button">
           Request Info
         </button>
 

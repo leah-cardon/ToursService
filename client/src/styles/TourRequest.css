@@ -1,0 +1,53 @@
+#container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.grid {
+  -moz-box-flex: 1;
+  flex: 1 0 auto;
+  display: block;
+}
+
+.toggle {
+  font-weight: normal;
+  background-color: rgb(255, 255, 255);
+  position: relative;
+  transition: box-shadow 0s ease 0s, border 0s ease 0s;
+  color: rgb(0, 120, 130);
+  margin: 0px;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: 8px 16px;
+  width: 100%;
+  outline: none;
+}
+
+.noTour {
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgb(232, 233, 234);
+  border-bottom-left-radius: 8px;
+}
+
+.noReq {
+  border: 1px solid transparent;
+  border-bottom: 1px solid rgb(232, 233, 234);
+  border-bottom-right-radius: 8px;
+}
+
+.selTour {
+  box-shadow: rgb(255, 255, 255) 0px 2px  0px -1px;
+  border: 1px solid rgb(232, 233, 234);
+  border-bottom: none;
+}
+.selReq {
+  box-shadow: rgb(255, 255, 255) 0px 2px  0px -1px;
+  border: 1px solid rgb(232, 233, 234);
+  border-bottom: none;
+}

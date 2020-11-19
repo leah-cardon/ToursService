@@ -3,15 +3,16 @@ import PropTypes from 'prop-types';
 
 import ReactTooltip from 'react-tooltip';
 import { star, badStar } from '../../utils/SVG';
+import s from '../../styles/Agents.css';
 
 const Agent = ({ agent, setAgent, curAgent }) => {
   const toolTipId = `${agent.name}Tooltip`;
-  const selAgent = agent.name === curAgent ? 'selAgent agentPhoto' : 'agentPhoto';
+  const selAgent = agent.name === curAgent ? `${s.sel} ${s.photo}` : s.photo;
   const stars = [1, 2, 3, 4, 5].map((num) => (agent.stars >= num ? star : badStar));
 
   return (
     <div
-      className="agent"
+      className={s.agent}
       onClick={() => setAgent(agent.name)}
       onKeyDown={() => setAgent(agent.name)}
       role="button"
@@ -20,19 +21,19 @@ const Agent = ({ agent, setAgent, curAgent }) => {
       data-for={toolTipId}
     >
       <img className={selAgent} src={agent.photo} alt="AgentIMG" />
-      <p className="agentTitle">{`${agent.title}\nAgent`}</p>
+      <p className={s.title}>{`${agent.title}\nAgent`}</p>
 
-      <ReactTooltip id={toolTipId} className="agentToolTip opaque" place="top" effect="solid" type="light" clickable delayHide={100}>
-        <div className="agentContainer">
-          <img className="tooltipPhoto" src={agent.photo} alt="AgentIMG" />
-          <div className="agentInfo">
-            <p className="tooltipInfo tooltipName">{agent.name}</p>
-            <p className="tooltipInfo">{`${agent.title} Agent`}</p>
-            <p className="tooltipInfo">{agent.number}</p>
+      <ReactTooltip id={toolTipId} className="opaque" place="top" effect="solid" type="light" clickable delayHide={100}>
+        <div className={s.container}>
+          <img className={s.tPhoto} src={agent.photo} alt="AgentIMG" />
+          <div className={s.agentInfo}>
+            <p className={`${s.info} ${s.name}`}>{agent.name}</p>
+            <p className={s.info}>{`${agent.title} Agent`}</p>
+            <p className={s.info}>{agent.number}</p>
           </div>
-          <div className="agentRatings">
-            <p className="tooltipInfo rating">{stars}  ({agent.reviews})</p>
-            <p className="tooltipInfo rating">{agent.sales} Recent Sales</p>
+          <div className={s.agentRatings}>
+            <p className={`${s.info} ${s.rating}`}>{stars}  ({agent.reviews})</p>
+            <p className={`${s.info} ${s.rating}`}>{agent.sales} Recent Sales</p>
           </div>
         </div>
       </ReactTooltip>

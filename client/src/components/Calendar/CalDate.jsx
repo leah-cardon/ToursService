@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import s from '../../styles/Calendar.css';
+
 const CalDate = ({ currentDate, date, setDate, direction }) => {
-  // a little confusing, but if arrow points right, we want to display left items.
-  const style = direction === 'right' ? 'calGridItem' : 'calGridItem calGridRight';
-  const buttonStyle = date.date === currentDate ? 'calButton calSelected' : 'calButton';
+  const style = direction === 'right' ? s.date : `${s.date} ${s.transform}`;
+  const buttonStyle = date.date === currentDate ? `${s.button} ${s.sel}` : s.button;
 
   return (
     <div className={style}>
       <button className={buttonStyle} type="button" onClick={() => setDate(date.date)}>
-        <p className="calName">{date.name}</p>
-        <p className="calDay">{date.day}</p>
-        <p className="calMonth">{date.month}</p>
+        <p className={s.name}>{date.name}</p>
+        <p className={s.day}>{date.day}</p>
+        <p className={s.month}>{date.month}</p>
       </button>
 
     </div>
