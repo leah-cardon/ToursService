@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const models = require('../database/models.js');
-const seed = require('../database/seed.js');
+const models = require('../../database/models.js');
+const seed = require('../../database/seed.js');
 
 // Runs ONCE before ANY tests in this file - NOT before EACH test!
 beforeAll(async (done) => {
@@ -27,9 +27,9 @@ describe('Seed Test Suite', () => {
     expect(users.length).toBe(100);
   });
 
-  test('should insert 5 agents into the database', async () => {
+  test('should insert 4 agents into the database', async () => {
     const agents = await models.getAgents();
-    expect(agents.length).toBe(5);
+    expect(agents.length).toBe(4);
   });
 });
 

@@ -19,3 +19,6 @@ coverage
 
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 client/public/bundle.js
+
+# Testing snapshots
+spec/client/__snapshots__
