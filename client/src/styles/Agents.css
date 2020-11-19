@@ -1,0 +1,89 @@
+#agentList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.agent {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+}
+
+.sel {
+  border: 3px solid rgb(0, 173, 187);
+  border-radius: 11px;
+}
+
+.photo {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+}
+
+.photo:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.title {
+  display: inline-block;
+  text-align: center;
+  font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+  color: rgb(134, 144, 153);
+  font-size: 12px;
+  line-height: 1.33;
+  width: 40px;
+}
+
+/* Agent Tooltip */
+
+.container {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+}
+
+.tPhoto {
+  position: relative;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+}
+
+.tPhoto:hover {
+  transition: transform 0.45s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+  transform: scale(1.1);
+}
+
+.agentInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  margin: 0;
+  padding: 0 0 0 5px;
+  font-size: 14px;
+}
+
+.name {
+  font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
+}
+
+.agentRatings {
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(134, 144, 153);
+}
+

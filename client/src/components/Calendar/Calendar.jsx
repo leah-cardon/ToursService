@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { getDays } from '../../utils/Logic';
+import s from '../../styles/Calendar.css';
 
 import CalDate from './CalDate';
 import CalendarArrows from './CalendarArrows';
@@ -16,7 +17,7 @@ const Calendar = ({ currentDate, setDate }) => {
   }, []);
 
   return (
-    <div id="calendarCarousel">
+    <div id={s.carousel}>
       <CalendarArrows direction={direction} setDirection={setDirection} arrowDir="left" />
       {dateList.map((formattedDate) => (
         <CalDate
