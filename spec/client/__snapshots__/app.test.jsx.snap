@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Test Suite snapshot render should match 1`] = `
+<div
+  className="appContainer"
+>
+  <TourRequest
+    toggleTour={[Function]}
+    tour={true}
+  />
+  <div
+    id="moduleContainer"
+  >
+    <div>
+      <TourType
+        digital={false}
+        setDigital={[Function]}
+      />
+      <Calendar
+        currentDate=""
+        setDate={[Function]}
+      />
+      <TimeDropdown
+        currentDate=""
+        occupied={Array []}
+        setTime={[Function]}
+      />
+    </div>
+    <RequestForm
+      call={false}
+      setCall={[Function]}
+      submit={[Function]}
+      tour={true}
+    />
+    <Disclaimer
+      tour={true}
+    />
+  </div>
+</div>
+`;
