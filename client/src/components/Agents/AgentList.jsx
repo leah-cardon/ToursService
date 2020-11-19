@@ -12,7 +12,7 @@ const AgentList = ({ agents, setAgent, curAgent }) => (
 );
 
 AgentList.propTypes = {
-  agents: PropTypes.shape([]).isRequired,
+  agents: PropTypes.array.isRequired,
   setAgent: PropTypes.func.isRequired,
   curAgent: PropTypes.string.isRequired,
 };
