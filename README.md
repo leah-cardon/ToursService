@@ -1,8 +1,8 @@
-# toursAffordability
+# tours
 
 ## About The Project
 A student recreation of a Trulia page.
-Tours and affordability module.
+Tour request module.
 
 ## Table of Contents
 
