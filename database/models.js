@@ -12,7 +12,8 @@ const insertUser = (user) => User.findOne({ name: user.name })
       console.log(`Inserted ${user.name} into the database!`);
       return User.create(user);
     }
-    throw (new Error('User exists!'));
+    console.log(`Updated ${user.name}'s entry!`);
+    return User.findOneAndUpdate({ name: user.name }, user);
   });
 
 // Get list of all agents.

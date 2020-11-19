@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import App from '../client/src/components/App';
+import App from '../../client/src/components/App';
 
 describe('App Test Suite', () => {
   const wrapper = shallow(<App />);
@@ -20,5 +20,9 @@ describe('App Test Suite', () => {
     });
 
     expect(found).toEqual(true);
+  });
+
+  test('snapshot render should match', () => {
+    expect(wrapper).toMatchSnapshot();
   });
 });

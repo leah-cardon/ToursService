@@ -10,7 +10,7 @@ export const getData = (setRequests, setAgents) => axios.get('/api/tours/request
   .then((response) => setAgents(response.data))
   .catch((err) => console.log(err));
 
-export const submitForm = (toSend) => axios.post('/api/tours/users', toSend)
+export const submitForm = (toSend) => axios.post('/api/tours/requests', toSend)
   .then(() => console.log(`Sent ${toSend.name}'s request to the database!`))
   .catch((err) => console.log(err));
 

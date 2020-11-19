@@ -1,21 +1,19 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
 const db = require('../database/models.js');
 
 const app = express();
 
 app.use(express.static(path.join(__dirname, '/../client/public')));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => {
   res.sendStatus(200);
 });
 
-// req.body should include {name, number, email, type, date, time, call}
 // Inserts a user's tour request to the database
-app.post('/api/tours/users', (req, res) => db.insertUser(req.body)
+app.post('/api/tours/requests', (req, res) => db.insertUser(req.body)
   .then(() => res.sendStatus(200))
   .catch((err) => {
     console.error(err);

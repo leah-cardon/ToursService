@@ -134,7 +134,7 @@ module.exports = {
   // slowTestThreshold: 5,
 
   // A list of paths to snapshot serializer modules Jest should use for snapshot testing
-  // snapshotSerializers: [],
+  snapshotSerializers: ["enzyme-to-json/serializer"],
 
   // The test environment that will be used for testing
   testEnvironment: "node",
