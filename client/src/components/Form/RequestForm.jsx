@@ -56,7 +56,7 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
       {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
 
       <button id="tourSubmit" type="submit">{buttonName}</button>
-      {!tour ? (<FinancingCheck call={call} setCall={setCall} />) : null}
+      {!tour && (<FinancingCheck call={call} setCall={setCall} />)}
     </form>
   );
 };

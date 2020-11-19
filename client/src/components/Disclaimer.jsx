@@ -14,7 +14,7 @@ const Disclaimer = ({ tour }) => {
 
   return (
     <div>
-      {tour ? <HealthAdvisory /> : null}
+      {tour && <HealthAdvisory />}
       <p id="disclaimerText">
         By pressing {name}, you agree that Trulia and real estate professionals may contact you
         via phone/text about your inquery, which may involve the use of automated means. You are not

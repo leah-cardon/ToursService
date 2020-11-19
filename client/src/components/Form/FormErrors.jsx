@@ -9,16 +9,14 @@ const emailErr = (<p className="errText">Enter a valid email.</p>);
 
 const FormErrors = ({ name, number, email }) => (
   <div>
-    {name || number ? (
+    {(name || number) && (
       <div id="errNamePhone">
-
-        {name ? (<div className="formErr">{errExcl}{nameErr}</div>) : null }
-        {number ? (<div className="formErr" id="errPhone">{errExcl}{phoneErr}</div>) : null }
-
+        {name && (<div className="formErr">{errExcl}{nameErr}</div>) }
+        {number && (<div className="formErr" id="errPhone">{errExcl}{phoneErr}</div>)}
       </div>
-    ) : null}
+    )}
 
-    {email ? (<div className="formErr" id="errEmail">{errExcl}{emailErr}</div>) : null}
+    {email && (<div className="formErr" id="errEmail">{errExcl}{emailErr}</div>)}
   </div>
 );
 

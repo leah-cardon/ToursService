@@ -37,17 +37,17 @@ const App = () => {
     <div className="appContainer">
       <TourRequest tour={tour} toggleTour={toggleTour} />
       <div id="moduleContainer">
-        {tour ? (
+        {tour && (
           <div>
             <TourType digital={digital} setDigital={setDigital} />
             <Calendar currentDate={currentDate} setDate={setDate} />
             <TimeDropdown occupied={requests} currentDate={currentDate} setTime={setTime} />
           </div>
-        ) : null}
+        )}
 
         <RequestForm tour={tour} call={call} setCall={setCall} submit={submit} />
         <Disclaimer tour={tour} />
-        {!tour ? (<AgentList curAgent={curAgent} agents={agents} setAgent={setAgent} />) : null}
+        {!tour && (<AgentList curAgent={curAgent} agents={agents} setAgent={setAgent} />)}
       </div>
 
     </div>
