@@ -30,3 +30,12 @@ sudo apt-get install -y mongodb-org
 sudo systemctl start mongod
 sudo systemctl enable mongod
   - (starts mongo when system starts!)
+
+To start a server and make it run forever:
+
+npm install -g pm2
+pm2 start <entrypoint.js> --name "entrypoint"
+pm2 save
+pm2 startup
+  - this will give you a long sudo command
+  - copy/paste and run in the terminal to set startup script!
