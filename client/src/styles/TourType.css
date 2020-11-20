@@ -18,7 +18,7 @@
 
 .button {
   flex: 1 1 auto;
-  border-style: solid;
+  border: solid 1px rgb(205, 209, 212);
   cursor: pointer;
   font-weight: normal;
   font-size: 16px;
@@ -26,7 +26,6 @@
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   line-height: 1.5;
   padding: 8px 16px;
-  border-color: rgb(205, 209, 212);
   background-color: white;
   outline: none;
 }

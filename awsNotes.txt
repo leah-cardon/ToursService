@@ -1,5 +1,13 @@
 This information is for AWS Ubuntu 16.04 - reference info!
 
+
+EXTREMELY IMPORTANT:
+When updating the deployed app, make sure you build the webpack!
+Or...
+
+EDIT THIS SCRIPT TO BUILD THEN RUN THE APP.
+pm2 start "npm run dev" --name myAppName
+
 First, to ssh into the actual AWS server, run this in the command line:
 
 bash login.sh
