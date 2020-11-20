@@ -3,6 +3,7 @@
 ## About The Project
 A student recreation of a Trulia page.
 Tour request module.
+Visit http://34.229.154.23:3001/ to take a look at the isolated module!
 
 ## Table of Contents
 
