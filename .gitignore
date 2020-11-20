@@ -22,3 +22,9 @@ client/public/bundle.js
 
 # Testing snapshots
 spec/client/__snapshots__
+
+# AWS PEM key
+toursKey.pem
+
+# login bash script
+login.sh
