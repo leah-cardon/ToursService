@@ -32,6 +32,14 @@ svg {
   width: 24px;
 }
 
+/* For time dropdown arrow */
+
+:global .tmDrpArr {
+  height: 15px;
+  width: 16px;
+}
+
+
 /* For financial checkbox svg */
 
 :global .finSvgCheck {

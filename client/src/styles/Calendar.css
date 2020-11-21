@@ -38,7 +38,15 @@
   border-radius: 50%;
   padding: 0;
   cursor: pointer;
-  border-color: rgba(255, 255, 255, 0.57);
+  border: solid 1px rgb(232, 233, 234);
+  transition: box-shadow 0.1s ease 0s, color 0.1s ease 0s, border-color 0.2s ease 0s, background-color 0.2s ease 0s;
+  -moz-box-align: center;
+}
+
+.arrow:hover {
+  outline: currentcolor none medium;
+  border-color: transparent;
+  box-shadow: rgba(134, 144, 153, 0.18) 0px 8px 16px 0px, rgba(59, 65, 68, 0.05) 0px 2px 4px;
 }
 
 .arrow:active {
@@ -64,7 +72,7 @@
 .date {
   border-style: solid;
   border-color: transparent;
-  border-width: 8px 4px 0px;
+  border-width: 8px 4px;
   width: 22.5%;
   flex-shrink: 0;
   transition: transform 0.45s ease 0s;
@@ -102,16 +110,16 @@
 /* Inside Cal Button */
 
 .name {
-  margin: -4px 0 0 0;
+  margin: 0;
 }
 
 .day {
   font-family: "TruliaSansBold", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.2;
-  margin: 5px 0;
+  margin: 0;
 }
 
 .month {
-  margin: 5px 0 -2px;
+  margin: 2px 0 -2px;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import { getFreeSlots } from '../../utils/Logic';
+import { checkArrow } from '../../utils/SVG';
 import s from '../../styles/TimeDropdown.css';
 
 const TimeDropdown = ({ occupied, currentDate, setTime }) => {
@@ -17,7 +18,7 @@ const TimeDropdown = ({ occupied, currentDate, setTime }) => {
         <option value="">Choose a Time</option>
         {available.map((slot) => (<option value={slot}>{slot}</option>))}
       </select>
-      <p id={s.arrow}>&gt;</p>
+      <p id={s.arrow}>{checkArrow}</p>
 
     </div>
   );

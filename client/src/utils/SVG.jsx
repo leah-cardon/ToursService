@@ -12,9 +12,9 @@ export const errExcl = (<svg style={excl} viewBox="0 0 32 32" xmlns="http://www.
 
 // Calendar Carousel arrows
 
-export const left = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M14.292 16.494l7.147 7.056-1.869 1.893-9.067-8.951 9.069-8.927 1.866 1.896z" /></svg>);
+export const left = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(59, 65, 68)" d="M14.292 16.494l7.147 7.056-1.869 1.893-9.067-8.951 9.069-8.927 1.866 1.896z" /></svg>);
 
-export const right = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
+export const right = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(59, 65, 68)" d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
 
 // Financing Checkbox
 
@@ -27,6 +27,8 @@ export const checkMark = (
     </g>
   </svg>
 );
+
+export const checkArrow = (<svg className="tmDrpArr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(59, 65, 68)" d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
 
 // Health Advisory.
 
