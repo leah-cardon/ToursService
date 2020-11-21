@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
 import { getData, submitForm } from '../utils/Logic';
+import '../styles/Globals.css';
+import s from '../styles/App.css';
 
 import TourRequest from './TourRequest';
 import TourType from './TourType';
@@ -9,9 +11,6 @@ import TimeDropdown from './Calendar/TimeDropdown';
 import RequestForm from './Form/RequestForm';
 import Disclaimer from './Disclaimer';
 import AgentList from './Agents/AgentList';
-
-import '../styles/Globals.css';
-import s from '../styles/App.css';
 
 const App = () => {
   // State for API calls
