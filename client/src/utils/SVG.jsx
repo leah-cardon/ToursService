@@ -2,8 +2,10 @@ import React from 'react';
 
 // ---------------------------- SVG Graphics ---------------------------- //
 
+const defSVG = { width: '24px', height: '24px' };
+
 // Question mark in Tour Type
-export const qMark = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M15.96 27.93c-6.61 0-11.97-5.36-11.97-11.97S9.35 3.99 15.96 3.99s11.97 5.36 11.97 11.97-5.36 11.97-11.97 11.97zm0-2.66a9.31 9.31 0 1 0 0-18.62 9.31 9.31 0 0 0 0 18.62zm-1.33-4.51h2.66v2.66h-2.66v-2.66zm2.66-2.16h-2.66v-3.97h1.33a1.664 1.664 0 0 0 0-3.325c-.465 0-.897.19-1.21.523l-.912.968-1.936-1.824.912-.968a4.324 4.324 0 1 1 4.476 7.077V18.6z" fill="#869099" /></svg>);
+export const qMark = (<svg style={defSVG} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M15.96 27.93c-6.61 0-11.97-5.36-11.97-11.97S9.35 3.99 15.96 3.99s11.97 5.36 11.97 11.97-5.36 11.97-11.97 11.97zm0-2.66a9.31 9.31 0 1 0 0-18.62 9.31 9.31 0 0 0 0 18.62zm-1.33-4.51h2.66v2.66h-2.66v-2.66zm2.66-2.16h-2.66v-3.97h1.33a1.664 1.664 0 0 0 0-3.325c-.465 0-.897.19-1.21.523l-.912.968-1.936-1.824.912-.968a4.324 4.324 0 1 1 4.476 7.077V18.6z" fill="#869099" /></svg>);
 
 const excl = { height: '16px', width: '16px', 'line-height': 1.1 };
 
@@ -12,9 +14,9 @@ export const errExcl = (<svg style={excl} viewBox="0 0 32 32" xmlns="http://www.
 
 // Calendar Carousel arrows
 
-export const left = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M14.292 16.494l7.147 7.056-1.869 1.893-9.067-8.951 9.069-8.927 1.866 1.896z" /></svg>);
+export const left = (<svg style={defSVG} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M14.292 16.494l7.147 7.056-1.869 1.893-9.067-8.951 9.069-8.927 1.866 1.896z" /></svg>);
 
-export const right = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
+export const right = (<svg style={defSVG} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
 
 // Financing Checkbox
 
@@ -28,11 +30,12 @@ export const checkMark = (
   </svg>
 );
 
-export const checkArrow = (<svg className="tmDrpArr" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(59, 65, 68)" d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
+const tmDrpArr = { height: '15px', width: '16px' };
+export const checkArrow = (<svg style={tmDrpArr} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path fill="rgb(59, 65, 68)" d="M17.65 16.513l-7.147-7.055 1.868-1.893 9.068 8.951-9.069 8.927-1.866-1.896z" /></svg>);
 
 // Health Advisory.
 
-export const caution = (<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M27.549 26.933H4.371L15.96 3.755l11.589 23.178zM14.63 21.28v2.66h2.66v-2.66h-2.66zm0-8.585v6.643h2.66v-6.643h-2.66z" fill="rgb(0, 120, 130)" /></svg>);
+export const caution = (<svg style={defSVG} viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M27.549 26.933H4.371L15.96 3.755l11.589 23.178zM14.63 21.28v2.66h2.66v-2.66h-2.66zm0-8.585v6.643h2.66v-6.643h-2.66z" fill="rgb(0, 120, 130)" /></svg>);
 
 // Agent stars
 

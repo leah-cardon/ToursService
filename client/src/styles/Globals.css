@@ -25,21 +25,6 @@ body {
   border-radius: 12px;
 }
 
-/* NOTE: some inline styling done for svgs in SVG.jsx! */
-
-svg {
-  height: 24px;
-  width: 24px;
-}
-
-/* For time dropdown arrow */
-
-:global .tmDrpArr {
-  height: 15px;
-  width: 16px;
-}
-
-
 /* For financial checkbox svg */
 
 :global .finSvgCheck {
