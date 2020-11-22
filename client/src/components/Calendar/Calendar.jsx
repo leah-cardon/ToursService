@@ -17,16 +17,18 @@ const Calendar = ({ currentDate, setDate }) => {
   }, []);
 
   return (
-    <div id={s.carousel}>
+    <div id={s.container}>
       <CalendarArrows direction={direction} setDirection={setDirection} arrowDir="left" />
-      {dateList.map((formattedDate) => (
-        <CalDate
-          currentDate={currentDate}
-          setDate={setDate}
-          date={formattedDate}
-          direction={direction}
-        />
-      )) }
+      <div id={s.carousel}>
+        {dateList.map((formattedDate) => (
+          <CalDate
+            currentDate={currentDate}
+            setDate={setDate}
+            date={formattedDate}
+            direction={direction}
+          />
+        )) }
+      </div>
       <CalendarArrows direction={direction} setDirection={setDirection} arrowDir="right" />
     </div>
   );

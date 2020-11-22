@@ -1,12 +1,19 @@
 /* Calendar carousel */
 
+#container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+
 #carousel {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   position: relative;
-  margin: -8px -4px 0 -4px;
+  margin: -6px -4px -7px -4px;
   padding: 8px 4px 8px 0;
   transition: transform 0.45s ease 0s;
   overflow-x: hidden;
@@ -21,20 +28,24 @@
 
 .left {
   position: absolute;
-  left: 0;
+  left: -15px;
   z-index: 1;
+}
+
+.left button {
+  padding: 2px 2px 0 0;
 }
 
 .right {
   position: absolute;
-  right: 0;
+  right: -15px;
 }
 
 .arrow {
   outline: none;
   background-color: white;
-  width: 26px;
-  height: 26px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   padding: 0;
   margin-top: 4px;
@@ -81,7 +92,7 @@
   border-style: solid;
   border-color: transparent;
   border-width: 8px 4px;
-  width: 22.5%;
+  width: 22.8%;
   flex-shrink: 0;
   transition: transform 0.45s ease 0s;
 }
@@ -106,7 +117,11 @@
   font-family: "TruliaSans", system, -apple-system, Roboto, Segoe UI Bold, Arial, sans-serif;
 }
 
-.calButton:hover {
+.button:active {
+  box-shadow: rgb(0, 173, 187) 0px 0px 0px 2px;
+}
+
+.button:hover {
   background-color: rgb(245, 246, 247);
 }
 
