@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-// type = in-person/video toggle. call = checkbox for financing call.
 const userSchema = new mongoose.Schema({
   name: String,
   number: String,
@@ -13,7 +12,6 @@ const userSchema = new mongoose.Schema({
   agent: String,
 });
 
-// Later, refactor to add agent photo!
 const agentSchema = new mongoose.Schema({
   name: String,
   title: String,

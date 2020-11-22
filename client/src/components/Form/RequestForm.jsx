@@ -7,7 +7,6 @@ import s from '../../styles/Form.css';
 import FinancingCheck from '../FinancingCheck';
 import FormErrors from './FormErrors';
 
-// TO DO: Need property name from whoever's module that is.
 const RequestForm = ({ tour, call, setCall, submit }) => {
   const [form, setForm] = useState({
     name: '', number: '', email: '', message: '',
