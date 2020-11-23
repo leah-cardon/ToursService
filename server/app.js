@@ -17,7 +17,7 @@ app.post('/api/tours/requests', (req, res) => db.insertUser(req.body)
   .then(() => res.sendStatus(200))
   .catch((err) => {
     console.error(err);
-    res.status(500).send(`${err}`);
+    res.status(500).send(err);
   }));
 
 // Get date and time of every request in the database
@@ -30,7 +30,7 @@ app.get('/api/tours/agents', (req, res) => db.getAgents(res)
   .then((agents) => res.status(200).send(agents))
   .catch((err) => {
     console.error(err);
-    res.status(500).send(`${err}`);
+    res.status(500).send(err);
   }));
 
 module.exports = app;
