@@ -10,7 +10,7 @@ const CalendarArrows = ({ direction, setDirection, arrowDir }) => {
 
   // Adds appropriate styles based on which arrow is rendering.
   let style = arrowDir === 'right' ? s.right : s.left;
-  arrowDir !== direction ? style += ` ${s.hide}` : style += ` ${s.show}`;
+  style += arrowDir !== direction ? ` ${s.hide}` : ` ${s.show}`;
 
   return (
     <div className={style}>
