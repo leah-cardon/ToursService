@@ -8,7 +8,7 @@ import Agent from './Agent';
 const AgentList = ({ agents, setAgent, curAgent }) => (
   <div id={s.agentList}>
     {agents.map((agent) => (
-      <Agent key={agent.name} curAgent={curAgent} agent={agent} setAgent={setAgent} />
+      <Agent key={agent.name} agent={agent} setAgent={setAgent} selected={agent === curAgent} />
     ))}
   </div>
 );

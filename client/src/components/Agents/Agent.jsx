@@ -5,9 +5,9 @@ import ReactTooltip from 'react-tooltip';
 import { star, badStar } from '../../utils/SVG';
 import s from '../../styles/Agents.css';
 
-const Agent = ({ agent, setAgent, curAgent }) => {
+const Agent = ({ agent, setAgent, selected }) => {
   const toolTipId = `${agent.name}Tooltip`;
-  const selAgent = agent.name === curAgent ? `${s.sel} ${s.photo}` : s.photo;
+  const selAgent = selected ? `${s.sel} ${s.photo}` : s.photo;
   const stars = [1, 2, 3, 4, 5].map((num) => (agent.stars >= num ? star : badStar));
 
   return (
@@ -45,7 +45,7 @@ const Agent = ({ agent, setAgent, curAgent }) => {
 Agent.propTypes = {
   agent: PropTypes.object.isRequired,
   setAgent: PropTypes.func.isRequired,
-  curAgent: PropTypes.string.isRequired,
+  selected: PropTypes.bool.isRequired,
 };
 
 export default Agent;
