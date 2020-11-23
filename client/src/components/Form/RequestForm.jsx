@@ -30,9 +30,8 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const toSubmit = { ...form };
-    tour ? delete toSubmit.message : null;
-    verifyAll() ? submit(toSubmit) : null;
+    if (tour) { delete form.message; }
+    if (verifyAll()) { submit(form); }
   };
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';
