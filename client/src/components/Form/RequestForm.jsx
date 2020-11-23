@@ -36,7 +36,6 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
   const phoneRegex = '^\\(?([0-9]{3})\\)?[-.●]?([0-9]{3})[-.●]?([0-9]{4})$';
   const buttonName = tour ? 'Schedule A Tour' : 'Request Info';
-  const interested = (<textarea id={s.message} name="message" value={form.message} onChange={onChange} className={s.field} />);
 
   return (
     <form id="tourReqForm" onSubmit={handleSubmit}>
@@ -52,7 +51,8 @@ const RequestForm = ({ tour, call, setCall, submit }) => {
 
       <FormErrors email={errors.email} />
 
-      {tour ? (<FinancingCheck call={call} setCall={setCall} />) : interested}
+      {tour ? (<FinancingCheck call={call} setCall={setCall} />)
+        : (<textarea id={s.message} name="message" value={form.message} onChange={onChange} className={s.field} />)}
 
       <button id={s.submit} type="submit">{buttonName}</button>
       {!tour && (<FinancingCheck call={call} setCall={setCall} />)}
