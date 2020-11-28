@@ -12,6 +12,7 @@
 
 .toggle {
   font-weight: normal;
+  font-family: "TruliaSans";
   background-color: rgb(255, 255, 255);
   position: relative;
   transition: box-shadow 0s ease 0s, border 0s ease 0s;
