@@ -32,10 +32,10 @@ export const getFreeSlots = (occupied = [], currentDate = '') => {
     const time = `${hour}:00 ${ampm}`;
     const time2 = `${hour}:30 ${ampm}`;
 
-    !occupiedSlots[time] ? result.push(time) : null;
-    !occupiedSlots[time2] ? result.push(time2) : null;
+    if (occupiedSlots[time]) { result.push(time); }
+    if (occupiedSlots[time2]) { result.push(time2); }
   }
-  result[result.length - 1] === '7:30 PM' ? result.pop() : null;
+  if (result[result.length - 1] === '7:30 PM') { result.pop(); }
   return result;
 };
 
